@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button managementButton = (Button) findViewById(R.id.managementButton);
-
-
         class BackgroundTask extends AsyncTask<Void, Void, String>
         {
             String target;

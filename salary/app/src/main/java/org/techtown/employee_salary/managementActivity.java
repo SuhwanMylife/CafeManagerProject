@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.JsonReader;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -46,12 +48,22 @@ public class managementActivity extends AppCompatActivity {
                 employeeList.add(employee);
                 count++;
 
-
             }
         }catch (Exception e){
             e.printStackTrace();
         }
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent click_intent = new Intent(managementActivity.this,EmployeeClicked.class);
+
+                click_intent.putExtra("emp_name",employeeList.get(i).getEmp_name());
+                click_intent.putExtra("salary",employeeList.get(i).getEmp_salary());
+                click_intent.putExtra("working_hour",employeeList.get(i).getWorking_hour());
+                managementActivity.this.startActivity(click_intent);
+            }
+        });
 
     }
 }
