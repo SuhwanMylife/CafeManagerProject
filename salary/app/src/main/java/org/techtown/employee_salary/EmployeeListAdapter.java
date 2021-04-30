@@ -41,7 +41,10 @@ public class EmployeeListAdapter extends BaseAdapter {
         TextView emp_salary = (TextView) v.findViewById(R.id.emp_salary);
 
         emp_name.setText(employeeList.get(i).getEmp_name());
-        emp_salary.setText(employeeList.get(i).getEmp_salary());
+
+        int temp1 = Integer.parseInt(employeeList.get(i).getEmp_salary());
+        int temp2 = Integer.parseInt(employeeList.get(i).getWorking_hour());
+        emp_salary.setText(Integer.toString(temp1 * temp2) + "원");
 
         v.setTag(employeeList.get(i).getEmp_name());
         return v;

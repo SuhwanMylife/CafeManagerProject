@@ -4,6 +4,13 @@ public class Employee {
 
     String Emp_name;
     String Emp_salary;
+    String Working_hour;
+
+    public Employee(String emp_name, String emp_salary, String working_hour) {
+        Emp_name = emp_name;
+        Emp_salary = emp_salary;
+        Working_hour = working_hour;
+    }
 
     public String getEmp_name() {
         return Emp_name;
@@ -21,11 +28,12 @@ public class Employee {
         Emp_salary = emp_salary;
     }
 
-    public Employee(String emp_name, String emp_salary) {
-        Emp_name = emp_name;
-        Emp_salary = emp_salary;
+
+    public String getWorking_hour() {
+        return Working_hour;
     }
 
-
-
+    public void setWorking_hour(String working_hour) {
+        Working_hour = working_hour;
+    }
 }
