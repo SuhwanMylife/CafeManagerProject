@@ -23,12 +23,12 @@ public class EmployeeClicked extends AppCompatActivity {
         Intent intent = getIntent();
 
         name.setText("이름 : " + intent.getStringExtra("emp_name"));
-        position.setText("직책입니다");
+        position.setText("직책 : " + intent.getStringExtra("position"));
         salary.setText("시급 : " + intent.getStringExtra("salary") + "원");
         hour.setText(intent.getStringExtra("working_hour") + "시간 근무");
         int temp1 = Integer.parseInt(intent.getStringExtra("salary"));
         int temp2 = Integer.parseInt(intent.getStringExtra("working_hour"));
-        total_salary.setText("총 급여 " + Integer.toString(temp1 * temp2));
+        total_salary.setText("총 급여 : " + Integer.toString(temp1 * temp2) + "원");
 
 
     }
