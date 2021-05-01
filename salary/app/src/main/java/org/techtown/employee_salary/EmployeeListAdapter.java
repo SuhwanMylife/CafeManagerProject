@@ -7,6 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class EmployeeListAdapter extends BaseAdapter {
@@ -40,11 +41,13 @@ public class EmployeeListAdapter extends BaseAdapter {
         TextView emp_name = (TextView) v.findViewById(R.id.emp_name);
         TextView emp_salary = (TextView) v.findViewById(R.id.emp_salary);
 
+        DecimalFormat myFormatter = new DecimalFormat("###,###");
+
         emp_name.setText(employeeList.get(i).getEmp_name());
 
         int temp1 = Integer.parseInt(employeeList.get(i).getEmp_salary());
         int temp2 = Integer.parseInt(employeeList.get(i).getWorking_hour());
-        emp_salary.setText(Integer.toString(temp1 * temp2) + "원");
+        emp_salary.setText(myFormatter.format(temp1 * temp2) + "원");
 
         v.setTag(employeeList.get(i).getEmp_name());
         return v;
