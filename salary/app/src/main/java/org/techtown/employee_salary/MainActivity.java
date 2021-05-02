@@ -26,9 +26,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         class BackgroundTask extends AsyncTask<Void, Void, String>
         {
             String target;
-
             @Override
             protected void onPreExecute(){
                 target = "http://ghtjd8264.dothome.co.kr/employee.php";

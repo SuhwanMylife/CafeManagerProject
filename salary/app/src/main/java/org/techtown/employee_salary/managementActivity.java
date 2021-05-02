@@ -38,7 +38,6 @@ public class managementActivity extends AppCompatActivity {
             JSONArray jsonArray = jsonObject.getJSONArray("response");
             int count = 0;
             String emp_name,emp_position, emp_salary, working_hour;
-            int temp;
             while(count < jsonArray.length()){
                 JSONObject object = jsonArray.getJSONObject(count);
                 emp_name = object.getString("emp_name");
@@ -48,7 +47,6 @@ public class managementActivity extends AppCompatActivity {
                 Employee employee = new Employee(emp_name, emp_position , emp_salary, working_hour);
                 employeeList.add(employee);
                 count++;
-
             }
         }catch (Exception e){
             e.printStackTrace();
