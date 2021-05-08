@@ -1,4 +1,4 @@
-package com.example.sw15_usermanager;
+package com.creapple.cafe_manager;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String userId = jsonObject.getString("userID");
                                 String userStore = jsonObject.getString("userStore");
                                 Toast.makeText(getApplicationContext(), "로그인에 성공하였습니다", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, CheckActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 intent.putExtra("userID", userId);
                                 intent.putExtra("userStore", userStore);
                                 startActivity(intent);

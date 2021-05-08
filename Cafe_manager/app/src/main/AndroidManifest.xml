@@ -14,7 +14,9 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".Employee_clicked"></activity>
         <activity android:name=".ManagementActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".CheckActivity"/>
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

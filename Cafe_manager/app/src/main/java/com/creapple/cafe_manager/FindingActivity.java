@@ -1,4 +1,4 @@
-package com.example.sw15_usermanager;
+package com.creapple.cafe_manager;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;

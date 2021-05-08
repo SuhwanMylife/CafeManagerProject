@@ -1,5 +1,5 @@
 //메인페이지로 사용될 예정
-package com.example.sw15_usermanager;
+package com.creapple.cafe_manager;
 
 import androidx.appcompat.app.AppCompatActivity;
 

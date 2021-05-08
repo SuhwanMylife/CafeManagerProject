@@ -1,7 +1,10 @@
 package com.creapple.cafe_manager;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button managementButton = (Button) findViewById(R.id.managementButton);
+
         class BackgroundTask extends AsyncTask<Void, Void, String>
         {
             String target;
@@ -70,7 +74,26 @@ public class MainActivity extends AppCompatActivity {
                 new BackgroundTask().execute();
             }
         });
+    }
 
+    public void onBackPressed() {
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle("종료")
+                .setMessage("앱을 종료 하시겠습니까?")
+                .setPositiveButton("종료", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ActivityCompat.finishAffinity(MainActivity.this); //액티비티 종료
+                        System.exit(0); //완전 어플 종료
+                    }
+                })
+                .setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                })
+                .show();
     }
 
 
