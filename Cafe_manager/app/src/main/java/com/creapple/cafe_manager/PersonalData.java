@@ -1,4 +1,4 @@
-package InventoryManagement;
+package com.creapple.cafe_manager;
 
 public class PersonalData {
     private String member_pdt_id;

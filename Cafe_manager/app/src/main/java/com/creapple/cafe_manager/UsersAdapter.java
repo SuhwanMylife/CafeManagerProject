@@ -1,4 +1,4 @@
-package InventoryManagement;
+package com.creapple.cafe_manager;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -8,8 +8,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.creapple.cafe_manager.R;
 
 import java.util.ArrayList;
 

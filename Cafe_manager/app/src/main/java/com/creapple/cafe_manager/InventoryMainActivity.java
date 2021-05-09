@@ -1,4 +1,4 @@
-package InventoryManagement;
+package com.creapple.cafe_manager;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -13,8 +13,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.creapple.cafe_manager.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;

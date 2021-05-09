@@ -1,11 +1,11 @@
 //메인페이지로 사용될 예정
 package com.creapple.cafe_manager;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class CheckActivity extends AppCompatActivity {
 
