@@ -22,7 +22,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Button managementButton = (Button) findViewById(R.id.managementButton);
+        Button btn_inventory_check = (Button) findViewById(R.id.inventory_check);
+
+        btn_inventory_check.setOnClickListener(
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, InventoryManagement.InventoryMainActivity.class);
+                        startActivity(intent);
+                    }
+                });
 
         class BackgroundTask extends AsyncTask<Void, Void, String>
         {
