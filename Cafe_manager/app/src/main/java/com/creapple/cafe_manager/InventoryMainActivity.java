@@ -228,8 +228,7 @@ public class InventoryMainActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
 
-            progressDialog = ProgressDialog.show(InventoryMainActivity.this,
-                    "Please Wait", null, true, true);
+            progressDialog = ProgressDialog.show(InventoryMainActivity.this, "Please Wait", null, true, true);
         }
 
 
@@ -337,7 +336,8 @@ public class InventoryMainActivity extends AppCompatActivity {
 
                 JSONObject item = jsonArray.getJSONObject(i);
 
-                String pdt_id = item.getString(TAG_PDT_ID);
+                // switching frames is possible only from the frames view (not threads view)???
+                String pdt_id = item.optString(TAG_PDT_ID);
                 String pdt_name = item.getString(TAG_PDT_NAME);
                 String pdt_classification = item.getString(TAG_PDT_CLASSIFICATION);
                 String pdt_unit = item.getString(TAG_PDT_UNIT);

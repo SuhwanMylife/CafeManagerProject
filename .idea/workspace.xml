@@ -8,125 +8,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f112b90-fde8-4885-b7af-7ea14bcdb891" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CafeManagerProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Register.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/employee.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/androidTest/java/com/creapple/myapplication/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/java/com/creapple/myapplication/LoginActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/java/com/creapple/myapplication/LoginRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/java/com/creapple/myapplication/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/java/com/creapple/myapplication/RegisterActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/java/com/creapple/myapplication/RegisterRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/layout/activity_login.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/layout/activity_register.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/app/src/test/java/com/creapple/myapplication/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/androidTest/java/org/techtown/employee_salary/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/java/org/techtown/employee_salary/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/java/org/techtown/employee_salary/EmployeeClicked.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/java/org/techtown/employee_salary/EmployeeListAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/java/org/techtown/employee_salary/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/java/org/techtown/employee_salary/managementActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/layout/activity_employeeclicked.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/layout/activity_management.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/layout/employee.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/app/src/test/java/org/techtown/employee_salary/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/salary/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw15_usermanager/CheckActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw15_usermanager/FindingActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw15_usermanager/FindingRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw15_usermanager/LoginRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw15_usermanager/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw15_usermanager/RegisterActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw15_usermanager/RegisterRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sw15_usermanager/ValidateRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_layout/activity_check.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_layout/activity_finding.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_layout/activity_register.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="1f112b90-fde8-4885-b7af-7ea14bcdb891" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -193,5 +75,6 @@
         <entry key="1" value="TOOL_WINDOW" />
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
