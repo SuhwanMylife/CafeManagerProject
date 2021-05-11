@@ -43,9 +43,8 @@ public class EmployeeListAdapter extends BaseAdapter {
 
         emp_name.setText(employeeList.get(i).getEmp_name());
 
-        int temp1 = Integer.parseInt(employeeList.get(i).getEmp_salary());
-        int temp2 = Integer.parseInt(employeeList.get(i).getWorking_hour());
-        emp_salary.setText(myFormatter.format(temp1 * temp2) + "원");
+
+        emp_salary.setText(myFormatter.format(employeeList.get(i).getTotal_salary()) + "원");
 
         v.setTag(employeeList.get(i).getEmp_name());
         return v;

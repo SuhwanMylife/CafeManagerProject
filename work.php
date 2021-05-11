@@ -5,7 +5,7 @@
     $response = array();
 
     while($row = mysqli_fetch_array($result)) {
-        array_push($response,array("count"=>$row[0],"employee_name"=>$row[1],"work_start"=>$row[2],"work_end"=>$row[3]));
+        array_push($response,array("count"=>$row[0],"employee_name"=>$row[1],"work_type"=>$row[2],"work_start"=>$row[3],"work_end"=>$row[4]));
     }
 
     echo json_encode(array("response"=>$response));

@@ -4,16 +4,25 @@ import java.util.Date;
 
 public class Emp_work {
     String emp_name;
+    String work_type;
     Date work_start;
-
-    public Emp_work(String emp_name, Date work_start, Date work_end) {
-        this.emp_name = emp_name;
-        this.work_start = work_start;
-        this.work_end = work_end;
-    }
-
     Date work_end;
 
+    public Emp_work(String emp_name, String work_type, Date work_start, Date work_end) {
+        this.emp_name = emp_name;
+        this.work_type = work_type;
+        this.work_start = work_start;
+        this.work_end = work_end;
+
+    }
+
+    public String getWork_type() {
+        return work_type;
+    }
+
+    public void setWork_type(String work_type) {
+        this.work_type = work_type;
+    }
 
     public String getEmp_name() {
         return emp_name;
@@ -38,6 +47,5 @@ public class Emp_work {
     public void setWork_end(Date work_end) {
         this.work_end = work_end;
     }
-
 
 }
