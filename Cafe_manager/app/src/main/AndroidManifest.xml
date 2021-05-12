@@ -15,12 +15,12 @@
         <activity android:name=".Employee_clicked"></activity>
         <activity android:name=".ManagementActivity" />
         <activity android:name=".MainActivity"/>
-        <activity android:name=".CheckActivity"/>
+        <activity android:name=".FindingActivity"/>
+        <activity android:name=".RegisterActivity"/>
         <activity android:name=".InventoryMainActivity"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
