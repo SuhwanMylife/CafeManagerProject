@@ -1,6 +1,7 @@
 package com.creapple.cafe_manager;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -31,12 +32,12 @@ public class InventoryMainActivity extends AppCompatActivity {
     private static String IP_ADDRESS = "203.255.3.246";
     private static String TAG = "phpexample";
 
-    private EditText mEditTextpdtname;
-    private EditText mEditTextpdtclassification;
-    private EditText mEditTextpdtunit;
-    private EditText mEditTextpdtprice;
-    private EditText mEditTextpdtstock;
-    private TextView mTextViewResult;
+    //        private EditText mEditTextpdtname;
+//        private EditText mEditTextpdtclassification;
+//        private EditText mEditTextpdtunit;
+//        private EditText mEditTextpdtprice;
+//        private EditText mEditTextpdtstock;
+//        private TextView mTextViewResult;
     private ArrayList<PersonalData> mArrayList;
     private UsersAdapter mAdapter;
     private RecyclerView mRecyclerView;
@@ -49,18 +50,19 @@ public class InventoryMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inventory_main);
 
-        mEditTextpdtname = (EditText)findViewById(R.id.editText_main_pdt_name);
-        mEditTextpdtclassification = (EditText)findViewById(R.id.editText_main_pdt_classification);
-        mEditTextpdtunit = (EditText)findViewById(R.id.editText_main_pdt_unit);
-        mEditTextpdtprice = (EditText)findViewById(R.id.editText_main_pdt_price);
-        mEditTextpdtstock = (EditText)findViewById(R.id.editText_main_pdt_stock);
-        mTextViewResult = (TextView)findViewById(R.id.textView_main_result);
+//            mEditTextpdtname = (EditText)findViewById(R.id.editText_main_pdt_name);
+//            mEditTextpdtclassification = (EditText)findViewById(R.id.editText_main_pdt_classification);
+//            mEditTextpdtunit = (EditText)findViewById(R.id.editText_main_pdt_unit);
+//            mEditTextpdtprice = (EditText)findViewById(R.id.editText_main_pdt_price);
+//            mEditTextpdtstock = (EditText)findViewById(R.id.editText_main_pdt_stock);
+//            mTextViewResult = (TextView)findViewById(R.id.textView_main_result);
+
         mRecyclerView = (RecyclerView) findViewById(R.id.listView_main_list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         mEditTextSearchKeyword = (EditText) findViewById(R.id.editText_main_searchKeyword);
 
-        mTextViewResult.setMovementMethod(new ScrollingMovementMethod());
+//            mTextViewResult.setMovementMethod(new ScrollingMovementMethod());
 
 
 
@@ -70,28 +72,29 @@ public class InventoryMainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
 
-        Button buttonInsert = (Button)findViewById(R.id.button_main_insert);
-        buttonInsert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String pdt_name = mEditTextpdtname.getText().toString();
-                String pdt_classification = mEditTextpdtclassification.getText().toString();
-                String pdt_unit = mEditTextpdtunit.getText().toString();
-                String pdt_price = mEditTextpdtprice.getText().toString();
-                String pdt_stock = mEditTextpdtstock.getText().toString();
-
-                InsertData task = new InsertData();
-                task.execute( "http://" + IP_ADDRESS + "/ListViewPractice/insert.php", pdt_name, pdt_classification, pdt_unit, pdt_price, pdt_stock);
-
-                mEditTextpdtname.setText("");
-                mEditTextpdtclassification.setText("");
-                mEditTextpdtunit.setText("");
-                mEditTextpdtprice.setText("");
-                mEditTextpdtstock.setText("");
-
-            }
-        });
+//            // 재고 품목 추가 버튼
+//            Button buttonInsert = (Button)findViewById(R.id.button_main_insert);
+//            buttonInsert.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//                    String pdt_name = mEditTextpdtname.getText().toString();
+//                    String pdt_classification = mEditTextpdtclassification.getText().toString();
+//                    String pdt_unit = mEditTextpdtunit.getText().toString();
+//                    String pdt_price = mEditTextpdtprice.getText().toString();
+//                    String pdt_stock = mEditTextpdtstock.getText().toString();
+//
+//                    InsertData task = new InsertData();
+//                    task.execute( "http://" + IP_ADDRESS + "/ListViewPractice/insert.php", pdt_name, pdt_classification, pdt_unit, pdt_price, pdt_stock);
+//
+////                    mEditTextpdtname.setText("");
+////                    mEditTextpdtclassification.setText("");
+////                    mEditTextpdtunit.setText("");
+////                    mEditTextpdtprice.setText("");
+////                    mEditTextpdtstock.setText("");
+//
+//                }
+//            });
 
 
         Button button_search = (Button) findViewById(R.id.button_main_search);
@@ -125,104 +128,34 @@ public class InventoryMainActivity extends AppCompatActivity {
 
     }
 
-
-    class InsertData extends AsyncTask<String, Void, String> {
-        ProgressDialog progressDialog;
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-            progressDialog = ProgressDialog.show(InventoryMainActivity.this, "Please Wait", null, true, true);
-        }
-
-
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-
-            progressDialog.dismiss();
-            mTextViewResult.setText(result);
-            Log.d(TAG, "POST response  - " + result);
-        }
-
-
-        @Override
-        protected String doInBackground(String... params) {
-
-            String pdt_name = (String)params[1];
-            String pdt_classification = (String)params[2];
-            String pdt_unit = (String)params[3];
-            String pdt_price = (String)params[4];
-            String pdt_stock = (String)params[5];
-
-            String serverURL = (String)params[0];
-            String postParameters = "pdt_name=" + pdt_name + "&pdt_classification=" + pdt_classification + "&pdt_unit=" + pdt_unit + "&pdt_price=" + pdt_price + "&pdt_stock=" + pdt_stock;
-
-
-
-            try {
-
-                URL url = new URL(serverURL);
-                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-
-
-                httpURLConnection.setReadTimeout(5000);
-                httpURLConnection.setConnectTimeout(5000);
-                httpURLConnection.setRequestMethod("POST");
-                httpURLConnection.connect();
-
-
-                OutputStream outputStream = httpURLConnection.getOutputStream();
-                outputStream.write(postParameters.getBytes("UTF-8"));
-                outputStream.flush();
-                outputStream.close();
-
-
-                int responseStatusCode = httpURLConnection.getResponseCode();
-                Log.d(TAG, "POST response code - " + responseStatusCode);
-
-                InputStream inputStream;
-                if(responseStatusCode == HttpURLConnection.HTTP_OK) {
-                    inputStream = httpURLConnection.getInputStream();
-                }
-                else{
-                    inputStream = httpURLConnection.getErrorStream();
-                }
-
-
-                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-
-                StringBuilder sb = new StringBuilder();
-                String line = null;
-
-                while((line = bufferedReader.readLine()) != null){
-                    sb.append(line);
-                }
-
-
-                bufferedReader.close();
-
-
-                return sb.toString();
-
-
-            } catch (Exception e) {
-
-                Log.d(TAG, "InsertData: Error ", e);
-
-                return new String("Error: " + e.getMessage());
-            }
-
-        }
+    // 팝업 버튼
+    public void mOnPopupClick(View v){
+        //데이터 담아서 팝업(액티비티) 호출
+        Intent intent = new Intent(this, PopupActivity.class);
+        // intent.putExtra("data", "Test Popup");
+        startActivity(intent);
+        // startActivityForResult(intent, 1);
     }
 
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == 1) {
+//            if (resultCode == RESULT_OK) {
+//                //데이터 받기
+//                String result = data.getStringExtra("result");
+//                txtResult.setText(result);
+//            }
+//        }
+//    }
 
-    private class GetData extends AsyncTask<String, Void, String>{
+
+
+
+    public class GetData extends AsyncTask<String, Void, String>{
 
         ProgressDialog progressDialog;
-        String errorString = null;
+        // String errorString = null;
 
         @Override
         protected void onPreExecute() {
@@ -237,18 +170,21 @@ public class InventoryMainActivity extends AppCompatActivity {
             super.onPostExecute(result);
 
             progressDialog.dismiss();
-            mTextViewResult.setText(result);
+            // mTextViewResult.setText(result);
             Log.d(TAG, "response - " + result);
 
-            if (result == null){
+            mJsonString = result;
+            showResult();
 
-                mTextViewResult.setText(errorString);
-            }
-            else {
-
-                mJsonString = result;
-                showResult();
-            }
+//            if (result == null){
+//
+//                mTextViewResult.setText(errorString);
+//            }
+//            else {
+//
+//                mJsonString = result;
+//                showResult();
+//            }
         }
 
 
@@ -308,7 +244,7 @@ public class InventoryMainActivity extends AppCompatActivity {
             } catch (Exception e) {
 
                 Log.d(TAG, "InsertData: Error ", e);
-                errorString = e.toString();
+//                errorString = e.toString();
 
                 return null;
             }

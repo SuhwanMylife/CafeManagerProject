@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#eeeeee"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content">
+
+    <!-- 타이틀바 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Notice"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:background="#ff7a00"
+            android:layout_width="match_parent"
+            android:layout_height="53dp" />
+    </LinearLayout>
+    <!-- //end 타이틀바 -->
+
+    <TextView
+        android:id="@+id/textView_main_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:text="각 항목별로 입력 후 '입력' 버튼을 터치하세요." />
+
+    <EditText
+        android:id="@+id/editText_main_pdt_name"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="물품명을 입력하세요."
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editText_main_pdt_classification"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="분류를 입력하세요."
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editText_main_pdt_unit"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="단위를 입력하세요."
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editText_main_pdt_price"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="단가를 입력하세요."
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editText_main_pdt_stock"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="현재 재고를 입력하세요."
+        android:inputType="text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="입력"
+            android:id="@+id/button_insert"/>
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="취소"
+            android:onClick="mOnClose"/>
+
+
+    </LinearLayout>
+    <!-- Notice -->
+<!--    <LinearLayout-->
+<!--        android:padding="24dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <TextView-->
+<!--            android:id="@+id/txtText"-->
+<!--            android:textSize="15sp"-->
+<!--            android:textColor="#000"-->
+<!--            android:alpha="0.87"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_marginBottom="3dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" />-->
+<!--    </LinearLayout>-->
+<!--    &lt;!&ndash; Notice &ndash;&gt;-->
+
+<!--    <View-->
+<!--        android:background="#66bdbdbd"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp" />-->
+
+<!--    &lt;!&ndash; 닫기 버튼 &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <Button-->
+<!--            android:text="확인"-->
+<!--            android:textSize="15sp"-->
+<!--            android:textColor="#ff7a00"-->
+<!--            android:padding="16dp"-->
+<!--            android:gravity="center"-->
+<!--            android:background="#00000000"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="53dp"-->
+<!--            android:onClick="mOnClose"/>-->
+<!--    </LinearLayout>-->
+    <!--// 닫기 버튼 -->
+</LinearLayout>
