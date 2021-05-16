@@ -64,7 +64,7 @@
 
             <Button
                 android:layout_margin="3dp"
-                android:text="품목 추가"
+                android:text="발주"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
@@ -84,21 +84,4 @@
         android:layout_weight="6"
         android:id="@+id/listView_main_list" />
 
-
-    <!--        &lt;!&ndash;- 디버깅 용 &ndash;&gt;-->
-    <!--        <TextView-->
-    <!--            android:layout_marginTop="20dp"-->
-    <!--            android:layout_marginBottom="5dp"-->
-    <!--            android:text="디버깅 용"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:id="@+id/textView_main_debug" />-->
-
-    <!--        <TextView-->
-    <!--            android:layout_margin="5dp"-->
-    <!--            android:id="@+id/textView_main_result"-->
-    <!--            android:scrollbars = "vertical"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="0dp"-->
-    <!--            android:layout_weight="1.5" />-->
 </LinearLayout>

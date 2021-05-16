@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView_main_list" />
+
+    <View
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="5px"
+        android:layout_marginBottom="3dp"/>
+    <View
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="5px"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="총 금액: "
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="3dp"
+            android:text="품목 추가"
+            android:textSize="20dp"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="3dp"
+            android:text="발주하기"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+</LinearLayout>

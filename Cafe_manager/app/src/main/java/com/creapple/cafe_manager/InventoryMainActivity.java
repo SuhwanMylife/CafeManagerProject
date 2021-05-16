@@ -155,6 +155,7 @@ public class InventoryMainActivity extends AppCompatActivity {
     public class GetData extends AsyncTask<String, Void, String>{
 
         ProgressDialog progressDialog;
+
         // String errorString = null;
 
         @Override
