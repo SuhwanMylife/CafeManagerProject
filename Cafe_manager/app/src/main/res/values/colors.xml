@@ -11,4 +11,7 @@
     //버튼 활성 및 비활성화 색 지정
     <color name="btn">#1CAAE3</color>
     <color name="colorGray">#D3D3D3</color>
+    <color name="btn_act">#1CAAE3</color>
+    <color name="btn_rest">#C0C0C0</color>
+    <color name="table_1col">#FFFFFF</color>
 </resources>
