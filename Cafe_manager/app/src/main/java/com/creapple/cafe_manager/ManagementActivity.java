@@ -26,9 +26,7 @@ public class ManagementActivity extends AppCompatActivity {
     private EmployeeListAdapter adapter;
     private List<Employee> employeeList;
     private Spinner monthSpinner;
-    ArrayList<Emp_work> workArrayList;
-
-    String [] items = {"1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"};
+    private ArrayList<Emp_work> workArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
