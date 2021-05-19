@@ -21,4 +21,9 @@
     <string name="btn_login">로그인</string>
     <string name="btn_find"><u><b>아이디 / 비밀번호 찾기</b></u></string>
     <string name="btn_register"><u><b>회원가입</b></u></string>
+    
+    <string name="btn_simply">간략히</string>
+    <string name="btn_detail">자세히</string>
+    <string name="pick_day">선택된 날짜</string>
+    
 </resources>
