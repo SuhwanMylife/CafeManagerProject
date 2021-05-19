@@ -19,6 +19,8 @@
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".InventoryMainActivity"/>
         <activity android:name=".PopupActivity" android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".TimeAll"/>
+        <activity android:name=".TimeDetailActivity"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
