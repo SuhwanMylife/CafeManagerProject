@@ -1,11 +1,13 @@
-package com.example.sw15_commute_manager;
-
+package com.creapple.cafe_manager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.creapple.cafe_manager.R;
+import com.creapple.cafe_manager.TimeAll;
 
 public class TimeDetailActivity extends AppCompatActivity {
     Button btn_simply;
