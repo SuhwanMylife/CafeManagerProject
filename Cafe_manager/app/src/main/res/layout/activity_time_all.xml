@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimeAll"
+    android:orientation="vertical"  >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp">
+
+        <Button
+            android:id="@+id/btn_simply"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_simply"
+            android:background="@color/btn_act"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp" />
+        <Button
+            android:id="@+id/btn_detail"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_detail"
+            android:background="@color/btn_rest"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_day"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="55dp"
+        android:textSize="20dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_day"
+            android:layout_marginLeft="55dp"
+            android:text="@string/main_day" />
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/pick_day"
+            android:gravity="center"
+            android:id="@+id/pick_day" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginTop="10dp"
+        android:stretchColumns="1">
+
+        <TableRow
+            android:background="@color/black">
+            <TextView
+                android:text="이름"
+                android:padding="20dip"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:background="@color/table_1col" />
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="1dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="근무시간" />
+        </TableRow>
+        <TableRow
+            android:background="@color/black">
+            <TextView
+                android:text="김씨"
+                android:padding="20dip"
+                android:layout_marginLeft="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:gravity="center"
+                android:background="@color/table_1col" />
+            <TextView
+                android:text="09:00 ~ 20:00"
+                android:padding="20dip"
+                android:layout_marginRight="1dp"
+                android:background="@color/white" />
+        </TableRow>
+        <TableRow
+            android:background="@color/black">
+            <TextView
+                android:text="이씨"
+                android:padding="20dip"
+                android:layout_marginLeft="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:gravity="center"
+                android:background="@color/table_1col" />
+            <TextView
+                android:text="09:00 ~ 20:00"
+                android:padding="20dip"
+                android:layout_marginRight="1dp"
+                android:background="@color/white"/>
+        </TableRow>
+        <TableRow
+            android:background="@color/black">
+            <TextView
+                android:text="박씨"
+                android:padding="20dip"
+                android:layout_marginLeft="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:gravity="center"
+                android:background="@color/table_1col" />
+            <TextView
+                android:text="09:00 ~ 20:00"
+                android:padding="20dip"
+                android:layout_marginRight="1dp"
+                android:background="@color/white"/>
+        </TableRow>
+        <TableRow
+            android:background="@color/black">
+            <TextView
+                android:text="송씨"
+                android:padding="20dip"
+                android:layout_marginLeft="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:gravity="center"
+                android:background="@color/table_1col" />
+            <TextView
+                android:text="09:00 ~ 20:00"
+                android:padding="20dip"
+                android:layout_marginRight="1dp"
+                android:background="@color/white"/>
+        </TableRow>
+        <TableRow
+            android:background="@color/black">
+            <TextView
+                android:text="최씨"
+                android:padding="20dip"
+                android:layout_marginLeft="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:gravity="center"
+                android:background="@color/table_1col" />
+            <TextView
+                android:text="09:00 ~ 20:00"
+                android:padding="20dip"
+                android:layout_marginRight="1dp"
+                android:background="@color/white"/>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
+
+<!-- 테이블 설명 : https://serendipity24.tistory.com/13 -->
