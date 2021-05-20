@@ -87,7 +87,6 @@
             android:background="@color/black">
             <TextView
                 android:id="@+id/emp0"
-                android:text="김씨"
                 android:padding="20dip"
                 android:layout_marginLeft="1dp"
                 android:layout_marginBottom="1dp"
@@ -96,7 +95,7 @@
                 android:background="@color/table_1col" />
             <TextView
                 android:id="@+id/work0"
-                android:text="09:00 ~ 20:00"
+                android:text="직원이 없습니다."
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
                 android:background="@color/white" />
@@ -105,7 +104,6 @@
             android:background="@color/black">
             <TextView
                 android:id="@+id/emp1"
-                android:text="이씨"
                 android:padding="20dip"
                 android:layout_marginLeft="1dp"
                 android:layout_marginBottom="1dp"
@@ -114,7 +112,6 @@
                 android:background="@color/table_1col" />
             <TextView
                 android:id="@+id/work1"
-                android:text="09:00 ~ 20:00"
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
                 android:background="@color/white"/>
@@ -123,7 +120,6 @@
             android:background="@color/black">
             <TextView
                 android:id="@+id/emp2"
-                android:text="박씨"
                 android:padding="20dip"
                 android:layout_marginLeft="1dp"
                 android:layout_marginBottom="1dp"
@@ -132,7 +128,6 @@
                 android:background="@color/table_1col" />
             <TextView
                 android:id="@+id/work2"
-                android:text="09:00 ~ 20:00"
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
                 android:background="@color/white"/>
@@ -141,7 +136,6 @@
             android:background="@color/black">
             <TextView
                 android:id="@+id/emp3"
-                android:text="송씨"
                 android:padding="20dip"
                 android:layout_marginLeft="1dp"
                 android:layout_marginBottom="1dp"
@@ -150,7 +144,6 @@
                 android:background="@color/table_1col" />
             <TextView
                 android:id="@+id/work3"
-                android:text="09:00 ~ 20:00"
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
                 android:background="@color/white"/>
@@ -159,7 +152,6 @@
             android:background="@color/black">
             <TextView
                 android:id="@+id/emp4"
-                android:text="최씨"
                 android:padding="20dip"
                 android:layout_marginLeft="1dp"
                 android:layout_marginBottom="1dp"
@@ -168,7 +160,6 @@
                 android:background="@color/table_1col" />
             <TextView
                 android:id="@+id/work4"
-                android:text="09:00 ~ 20:00"
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
                 android:background="@color/white"/>

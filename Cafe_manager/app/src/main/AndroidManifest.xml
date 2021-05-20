@@ -12,18 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cafe_manager"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Employee_clicked"></activity>
+        <activity android:name=".Time_clicked"></activity>
+        <activity android:name=".Employee_clicked" />
         <activity android:name=".ManagementActivity" />
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".FindingActivity"/>
-        <activity android:name=".RegisterActivity"/>
-        <activity android:name=".InventoryMainActivity"/>
-        <activity android:name=".PopupActivity" android:theme="@android:style/Theme.Dialog" />
-        <activity android:name=".TimeAll"/>
-        <activity android:name=".TimeDetailActivity"/>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".FindingActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".InventoryMainActivity" />
+        <activity
+            android:name=".PopupActivity"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".TimeAll" />
+        <activity android:name=".TimeDetailActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

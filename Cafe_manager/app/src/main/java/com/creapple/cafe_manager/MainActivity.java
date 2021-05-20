@@ -24,12 +24,16 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class MainActivity extends AppCompatActivity {
+    String emp_list, work_list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent_manage = new Intent(MainActivity.this,ManagementActivity.class);
-        Button managementButton = (Button) findViewById(R.id.managementButton);
+
+
+        new BackgroundTask().execute();
+        Button btn_commute = findViewById(R.id.commute);
+        Button btn_management = (Button) findViewById(R.id.managementButton);
         Button btn_inventory_check = (Button) findViewById(R.id.inventory_check);
 
         btn_inventory_check.setOnClickListener(
@@ -39,97 +43,25 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-        class JsonParse extends AsyncTask<Void, Void, String>
-        {
-            String target;
-            @Override
-            protected void onPreExecute(){
-                target = "http://ghtjd8264.dothome.co.kr/work.php";
-            }
 
-            @Override
-            protected String doInBackground(Void... voids) {
-                try{
-                    URL url = new URL(target);
-                    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                    InputStream inputStream = httpURLConnection.getInputStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                    String temp;
-                    StringBuilder stringBuilder = new StringBuilder();
-                    while ((temp = bufferedReader.readLine()) != null){
-                        stringBuilder.append(temp + "\n");
-                    }
-                    bufferedReader.close();
-                    inputStream.close();
-                    httpURLConnection.disconnect();
-                    return stringBuilder.toString().trim();
 
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                return null;
-            }
-
-            @Override
-            public void onProgressUpdate(Void... values){
-                super.onProgressUpdate(values);
-            }
-
-            @Override
-            public void onPostExecute(String result){
-
-                intent_manage.putExtra("worklist", result);
-                MainActivity.this.startActivity(intent_manage);
-
-            }
-        }
-        class BackgroundTask extends AsyncTask<Void, Void, String>
-        {
-            String target;
-            @Override
-            protected void onPreExecute(){
-                target = "http://ghtjd8264.dothome.co.kr/employee.php";
-            }
-
-            @Override
-            protected String doInBackground(Void... voids) {
-                try{
-                    URL url = new URL(target);
-                    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                    InputStream inputStream = httpURLConnection.getInputStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                    String temp;
-                    StringBuilder stringBuilder = new StringBuilder();
-                    while ((temp = bufferedReader.readLine()) != null){
-                        stringBuilder.append(temp + "\n");
-                    }
-                    bufferedReader.close();
-                    inputStream.close();
-                    httpURLConnection.disconnect();
-                    return stringBuilder.toString().trim();
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                return null;
-            }
-
-            @Override
-            public void onProgressUpdate(Void... values){
-                super.onProgressUpdate(values);
-            }
-
-            @Override
-            public void onPostExecute(String result){
-                intent_manage.putExtra("employeeList", result);
-                new JsonParse().execute();
-            }
-        }
-
-        managementButton.setOnClickListener(new View.OnClickListener() {
+        btn_management.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new BackgroundTask().execute();
+                Intent intent = new Intent(MainActivity.this, ManagementActivity.class);
+                intent.putExtra("worklist", work_list);
+                intent.putExtra("employeeList", emp_list);
+                startActivity(intent);
+            }
+        });
+
+        btn_commute.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, TimeAll.class);
+                intent.putExtra("worklist", work_list);
+                intent.putExtra("employeeList", emp_list);
+                startActivity(intent);
             }
         });
     }
@@ -153,6 +85,91 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .show();
+    }
+
+    class JsonParse extends AsyncTask<Void, Void, String>
+    {
+        String target;
+        @Override
+        protected void onPreExecute(){
+            target = "http://ghtjd8264.dothome.co.kr/work.php";
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            try{
+                URL url = new URL(target);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                String temp;
+                StringBuilder stringBuilder = new StringBuilder();
+                while ((temp = bufferedReader.readLine()) != null){
+                    stringBuilder.append(temp + "\n");
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return stringBuilder.toString().trim();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        public void onProgressUpdate(Void... values){
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        public void onPostExecute(String result){
+            work_list = result;
+
+        }
+    }
+    class BackgroundTask extends AsyncTask<Void, Void, String>
+    {
+        String target;
+        @Override
+        protected void onPreExecute(){
+            target = "http://ghtjd8264.dothome.co.kr/employee.php";
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            try{
+                URL url = new URL(target);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                String temp;
+                StringBuilder stringBuilder = new StringBuilder();
+                while ((temp = bufferedReader.readLine()) != null){
+                    stringBuilder.append(temp + "\n");
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return stringBuilder.toString().trim();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        public void onProgressUpdate(Void... values){
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        public void onPostExecute(String result){
+            emp_list = result;
+            new JsonParse().execute();
+        }
     }
 
 
