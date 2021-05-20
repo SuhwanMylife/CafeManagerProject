@@ -37,7 +37,7 @@ public class EmployeeListAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         View v = View.inflate(context, R.layout.employee, null);
         TextView emp_name = (TextView) v.findViewById(R.id.emp_name);
-        TextView emp_salary = (TextView) v.findViewById(R.id.emp_salary);
+        TextView emp_salary = (TextView) v.findViewById(R.id.emp_info);
 
         DecimalFormat myFormatter = new DecimalFormat("###,###");
 

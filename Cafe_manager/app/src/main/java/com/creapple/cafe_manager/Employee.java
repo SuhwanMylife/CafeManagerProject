@@ -19,7 +19,10 @@ public class Employee {
         this.night = night;
     }
 
-
+    public Employee(String emp_name, String emp_position) {
+        Emp_name = emp_name;
+        Emp_position = emp_position;
+    }
 
     public String getEmp_name() {
         return Emp_name;
