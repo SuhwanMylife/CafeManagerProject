@@ -33,65 +33,16 @@
 
 
     <!-- 데이터 연동 후 리스트뷰로 표현-->
-    <Button
-        android:id="@+id/btn_kim_time"
+    <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:gravity="center_vertical"
-        android:text="   김씨\n   직책 : 매니저"
-        android:drawableLeft="@mipmap/ic_launcher"
-        android:layout_marginTop="15dp"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:divider="#d1d1d1"
+        android:dividerHeight="10dp">
 
-    <Button
-        android:id="@+id/btn_lee_time"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center_vertical"
-        android:text="   이씨\n   직책 : 직원"
-        android:drawableLeft="@mipmap/ic_launcher"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"/>
-
-    <Button
-        android:id="@+id/btn_park_time"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center_vertical"
-        android:text="   박씨\n   직책 : 직원"
-        android:drawableLeft="@mipmap/ic_launcher"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"/>
-
-    <Button
-        android:id="@+id/btn_song_time"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center_vertical"
-        android:text="   송씨\n   직책 : 직원"
-        android:drawableLeft="@mipmap/ic_launcher"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"/>
-
-    <Button
-        android:id="@+id/btn_choi_time"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center_vertical"
-        android:text="   최씨\n   직책 : 직원"
-        android:drawableLeft="@mipmap/ic_launcher"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"/>
+    </ListView>
 
 
 </LinearLayout>
