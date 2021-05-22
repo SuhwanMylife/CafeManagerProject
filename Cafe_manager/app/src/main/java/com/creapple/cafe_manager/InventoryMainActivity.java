@@ -1,17 +1,22 @@
 package com.creapple.cafe_manager;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -59,6 +64,9 @@ public class InventoryMainActivity extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.listView_main_list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // set layout manager 1
+//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+//        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
         mEditTextSearchKeyword = (EditText) findViewById(R.id.editText_main_searchKeyword);
 
@@ -71,6 +79,30 @@ public class InventoryMainActivity extends AppCompatActivity {
         mAdapter = new UsersAdapter(this, mArrayList);
         mRecyclerView.setAdapter(mAdapter);
 
+        mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), mRecyclerView, new ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                PersonalData dict = mArrayList.get(position);
+                Toast.makeText(getApplicationContext(), dict.getMember_pdt_name()+' '+dict.getMember_pdt_classification()+' '+dict.getMember_pdt_unit()
+                        +' '+dict.getMember_pdt_price()+' '+dict.getMember_pdt_stock(), Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(getBaseContext(), UpdateActivity.class);
+
+
+                intent.putExtra("name", dict.getMember_pdt_name());
+                intent.putExtra("classification", dict.getMember_pdt_classification());
+                intent.putExtra("unit", dict.getMember_pdt_unit());
+                intent.putExtra("price", dict.getMember_pdt_price());
+                intent.putExtra("stock", dict.getMember_pdt_stock());
+
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
 
 //            // 재고 품목 추가 버튼
 //            Button buttonInsert = (Button)findViewById(R.id.button_main_insert);
@@ -109,7 +141,7 @@ public class InventoryMainActivity extends AppCompatActivity {
                 mEditTextSearchKeyword.setText("");
 
                 GetData task = new GetData();
-                task.execute( "http://" + IP_ADDRESS + "/ListViewPractice/query.php", Keyword);
+                task.execute( "http://ghtjd8264.dothome.co.kr/inventory_query.php", Keyword);
             }
         });
 
@@ -122,7 +154,7 @@ public class InventoryMainActivity extends AppCompatActivity {
                 mAdapter.notifyDataSetChanged();
 
                 GetData task = new GetData();
-                task.execute( "http://" + IP_ADDRESS + "/ListViewPractice/getjson.php", "");
+                task.execute( "http://ghtjd8264.dothome.co.kr/inventory_getjson.php", "");
             }
         });
 
@@ -257,7 +289,7 @@ public class InventoryMainActivity extends AppCompatActivity {
     private void showResult(){
 
         String TAG_JSON="choi";
-        String TAG_PDT_ID = "pdt_id";
+        // String TAG_PDT_ID = "pdt_id";
         String TAG_PDT_NAME = "pdt_name";
         String TAG_PDT_CLASSIFICATION ="pdt_classification";
         String TAG_PDT_UNIT ="pdt_unit";
@@ -274,7 +306,7 @@ public class InventoryMainActivity extends AppCompatActivity {
                 JSONObject item = jsonArray.getJSONObject(i);
 
                 // switching frames is possible only from the frames view (not threads view)???
-                String pdt_id = item.optString(TAG_PDT_ID);
+                // String pdt_id = item.optString(TAG_PDT_ID);
                 String pdt_name = item.getString(TAG_PDT_NAME);
                 String pdt_classification = item.getString(TAG_PDT_CLASSIFICATION);
                 String pdt_unit = item.getString(TAG_PDT_UNIT);
@@ -283,7 +315,7 @@ public class InventoryMainActivity extends AppCompatActivity {
 
                 PersonalData personalData = new PersonalData();
 
-                personalData.setMember_pdt_id(pdt_id);
+                // personalData.setMember_pdt_id(pdt_id);
                 personalData.setMember_pdt_name(pdt_name);
                 personalData.setMember_pdt_classification(pdt_classification);
                 personalData.setMember_pdt_unit(pdt_unit);
@@ -303,4 +335,54 @@ public class InventoryMainActivity extends AppCompatActivity {
 
     }
 
+    public interface ClickListener {
+        void onClick(View view, int position);
+
+        void onLongClick(View view, int position);
+    }
+
+    public static class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
+        private GestureDetector gestureDetector;
+        private InventoryMainActivity.ClickListener clickListener;
+
+        public RecyclerTouchListener(Context context, final RecyclerView recyclerView, final InventoryMainActivity.ClickListener clickListener) {
+            this.clickListener = clickListener;
+            gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
+
+                @Override
+                public boolean onSingleTapUp(MotionEvent e) {
+                    return true;
+                }
+
+                @Override
+                public void onLongPress(MotionEvent e) {
+                    View child = recyclerView.findChildViewUnder(e.getX(), e.getY());
+                    if (child != null && clickListener != null) {
+                        clickListener.onLongClick(child, recyclerView.getChildAdapterPosition(child));
+                    }
+                }
+            });
+        }
+
+        @Override
+        public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+
+            View child = rv.findChildViewUnder(e.getX(), e.getY());
+            if (child != null && clickListener != null && gestureDetector.onTouchEvent(e)) {
+                clickListener.onClick(child, rv.getChildAdapterPosition(child));
+            }
+
+            return false;
+        }
+
+        @Override
+        public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+
+        }
+
+        @Override
+        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+        }
+    }
 }

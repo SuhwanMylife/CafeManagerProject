@@ -11,17 +11,18 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    
+
+
+    private InventoryMainActivity.GetData getdata;
+
     @Before
     public void init() {
-        InventoryMainActivity inventorymainactivity = new InventoryMainActivity();
-        InventoryMainActivity.GetData getData = new InventoryMainActivity.GetData();
     }
     
     @Test
     // 기댓값과 실제 값이 같으면 테스트 통과. 다를시 테스트에 실패하는 구조
     public void addition_isCorrect() {
-        assertEquals(4, InventoryMainActivity.GetData.doInBackground);
+        assertEquals(4, getdata.doInBackground());
     }
 
 //    protected String doInBackground(String... params) {

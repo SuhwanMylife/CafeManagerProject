@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#eeeeee"
     android:orientation="vertical"
     android:layout_width="300dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/layoutborder">
+
 
     <!-- 타이틀바 -->
     <LinearLayout
@@ -11,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:text="품목 추가"
+            android:text="Notice"
             android:textSize="20sp"
             android:textColor="#fff"
             android:gravity="center"
@@ -29,16 +31,17 @@
         android:layout_gravity="center"
         android:text="각 항목별로 입력 후 '입력' 버튼을 터치하세요." />
 
-    <EditText
-        android:id="@+id/editText_main_pdt_name"
+    <TextView
+        android:id="@+id/et_name"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="물품명을 입력하세요."
-        android:inputType="text" />
+        android:hint="물품명"
+        android:inputType="text"
+        android:textSize="17dp"/>
 
     <EditText
-        android:id="@+id/editText_main_pdt_classification"
+        android:id="@+id/et_classification"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -46,7 +49,7 @@
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/editText_main_pdt_unit"
+        android:id="@+id/et_unit"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -54,19 +57,19 @@
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/editText_main_pdt_price"
+        android:id="@+id/et_price"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="단가를 입력하세요. (숫자)"
+        android:hint="단가를 입력하세요."
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/editText_main_pdt_stock"
+        android:id="@+id/et_stock"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="현재 재고를 입력하세요. (숫자)"
+        android:hint="현재 재고를 입력하세요."
         android:inputType="text" />
 
     <LinearLayout
@@ -80,8 +83,8 @@
             android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:text="추가"
-            android:id="@+id/button_insert"/>
+            android:text="저장하기"
+            android:id="@+id/button_update"/>
 
         <Button
             android:layout_gravity="center"
@@ -93,45 +96,4 @@
 
 
     </LinearLayout>
-    <!-- Notice -->
-<!--    <LinearLayout-->
-<!--        android:padding="24dp"-->
-<!--        android:orientation="vertical"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content">-->
-<!--        <TextView-->
-<!--            android:id="@+id/txtText"-->
-<!--            android:textSize="15sp"-->
-<!--            android:textColor="#000"-->
-<!--            android:alpha="0.87"-->
-<!--            android:gravity="center"-->
-<!--            android:layout_marginBottom="3dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content" />-->
-<!--    </LinearLayout>-->
-<!--    &lt;!&ndash; Notice &ndash;&gt;-->
-
-<!--    <View-->
-<!--        android:background="#66bdbdbd"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="1dp" />-->
-
-<!--    &lt;!&ndash; 닫기 버튼 &ndash;&gt;-->
-<!--    <LinearLayout-->
-<!--        android:orientation="horizontal"-->
-<!--        android:gravity="center"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content">-->
-<!--        <Button-->
-<!--            android:text="확인"-->
-<!--            android:textSize="15sp"-->
-<!--            android:textColor="#ff7a00"-->
-<!--            android:padding="16dp"-->
-<!--            android:gravity="center"-->
-<!--            android:background="#00000000"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="53dp"-->
-<!--            android:onClick="mOnClose"/>-->
-<!--    </LinearLayout>-->
-    <!--// 닫기 버튼 -->
 </LinearLayout>

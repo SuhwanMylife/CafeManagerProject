@@ -1,15 +1,16 @@
 package com.creapple.cafe_manager;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -18,52 +19,60 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class PopupActivity extends Activity {
+public class UpdateActivity extends AppCompatActivity {
 
     private static String IP_ADDRESS = "203.255.3.246";
     private static String TAG = "phpexample";
 
-    private EditText mEditTextpdtname;
-    private EditText mEditTextpdtclassification;
-    private EditText mEditTextpdtunit;
-    private EditText mEditTextpdtprice;
-    private EditText mEditTextpdtstock;
-
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //타이틀바 없애기
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.inventory_popup_activity);
 
-        mEditTextpdtname = (EditText)findViewById(R.id.editText_main_pdt_name);
-        mEditTextpdtclassification = (EditText)findViewById(R.id.editText_main_pdt_classification);
-        mEditTextpdtunit = (EditText)findViewById(R.id.editText_main_pdt_unit);
-        mEditTextpdtprice = (EditText)findViewById(R.id.editText_main_pdt_price);
-        mEditTextpdtstock = (EditText)findViewById(R.id.editText_main_pdt_stock);
+        setContentView(R.layout.popup_activity_update);
 
-//        //UI 객체생성
-//        txtText = (TextView)findViewById(R.id.txtText);
-//
-//        //데이터 가져오기
-//        Intent intent = getIntent();
-//        String data = intent.getStringExtra("data");
-//        txtText.setText(data);
+        String name = "";
+        String classification = "";
+        String unit = "";
+        String price = "";
+        String stock = "";
 
-        Button buttonInsert = (Button)findViewById(R.id.button_insert);
-        buttonInsert.setOnClickListener(new View.OnClickListener() {
+        Bundle extras = getIntent().getExtras();
+
+        name = extras.getString("name");
+        classification = extras.getString("classification");
+        unit = extras.getString("unit");
+        price = extras.getString("price");
+        stock = extras.getString("stock");
+
+        TextView tv_name = (TextView) findViewById(R.id.et_name);
+        EditText tv_classification = (EditText) findViewById(R.id.et_classification);
+        EditText tv_unit = (EditText) findViewById(R.id.et_unit);
+        EditText tv_price = (EditText) findViewById(R.id.et_price);
+        EditText tv_stock = (EditText) findViewById(R.id.et_stock);
+
+        String str1 = name; String str2 = classification; String str3 = unit; String str4 = price; String str5 = stock;
+
+        tv_name.setText(str1);
+        tv_classification.setText(str2);
+        tv_unit.setText(str3);
+        tv_price.setText(str4);
+        tv_stock.setText(str5);
+
+        // 수정한 내용 저장하기 버튼
+        Button buttonUpdate = (Button)findViewById(R.id.button_update);
+        buttonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String pdt_name = mEditTextpdtname.getText().toString();
-                String pdt_classification = mEditTextpdtclassification.getText().toString();
-                String pdt_unit = mEditTextpdtunit.getText().toString();
-                String pdt_price = mEditTextpdtprice.getText().toString();
-                String pdt_stock = mEditTextpdtstock.getText().toString();
+                String pdt_name = tv_name.getText().toString();
+                String pdt_classification = tv_classification.getText().toString();
+                String pdt_unit = tv_unit.getText().toString();
+                String pdt_price = tv_price.getText().toString();
+                String pdt_stock = tv_stock.getText().toString();
 
                 InsertData task = new InsertData();
-                // task.execute( "http://" + IP_ADDRESS + "/ListViewPractice/insert.php", pdt_name, pdt_classification, pdt_unit, pdt_price, pdt_stock);
-                task.execute( "http://ghtjd8264.dothome.co.kr/inventory_insert.php", pdt_name, pdt_classification, pdt_unit, pdt_price, pdt_stock);
+                task.execute( "http://ghtjd8264.dothome.co.kr/inventory_update.php", pdt_name, pdt_classification, pdt_unit, pdt_price, pdt_stock);
 
 //                Intent intent = new Intent();
 //                setResult(RESULT_OK, intent);
@@ -90,21 +99,20 @@ public class PopupActivity extends Activity {
         finish();
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        //바깥레이어 클릭시 안닫히게
-        if(event.getAction()==MotionEvent.ACTION_OUTSIDE){
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public void onBackPressed() {
-        //안드로이드 백버튼 막기
-        return;
-    }
-
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        //바깥레이어 클릭시 안닫히게
+//        if(event.getAction()==MotionEvent.ACTION_OUTSIDE){
+//            return false;
+//        }
+//        return true;
+//    }
+//
+//    @Override
+//    public void onBackPressed() {
+//        //안드로이드 백버튼 막기
+//        return;
+//    }
 
     class InsertData extends AsyncTask<String, Void, String> {
         ProgressDialog progressDialog;
@@ -113,7 +121,7 @@ public class PopupActivity extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
 
-            progressDialog = ProgressDialog.show(PopupActivity.this, "Please Wait", null, true, true);
+            progressDialog = ProgressDialog.show(UpdateActivity.this, "Please Wait", null, true, true);
         }
 
 
@@ -196,7 +204,3 @@ public class PopupActivity extends Activity {
         }
     }
 }
-
-
-
-
