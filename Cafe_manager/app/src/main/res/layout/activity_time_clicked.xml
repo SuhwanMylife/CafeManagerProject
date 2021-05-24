@@ -69,7 +69,25 @@
 
         </LinearLayout>
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_term"
+            android:layout_marginLeft="55dp"
+            android:text="@string/main_day" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pick_day"
+            android:gravity="center"
+            android:id="@+id/pick_term" />
     </LinearLayout>
     <TableLayout
         android:layout_width="match_parent"
