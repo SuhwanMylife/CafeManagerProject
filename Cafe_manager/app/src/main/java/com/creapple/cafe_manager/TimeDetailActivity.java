@@ -2,6 +2,7 @@ package com.creapple.cafe_manager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.TimedMetaData;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,7 +30,7 @@ public class TimeDetailActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //뒤로 가면 메인페이지로
+        super.onBackPressed();
     }
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class TimeDetailActivity extends AppCompatActivity {
                 intent.putExtra("worklist", work_list);
                 intent.putExtra("employeeList", emp_list);
                 startActivity(intent);
+                finish();
             }
         });
         listView = (ListView) findViewById(R.id.listView);
@@ -83,13 +85,7 @@ public class TimeDetailActivity extends AppCompatActivity {
 
                 intent.putExtra("emp_name",employeeList.get(i).getEmp_name());
                 intent.putExtra("position",employeeList.get(i).getEmp_position());
-                intent.putExtra("salary",employeeList.get(i).getEmp_salary());
-                intent.putExtra("working_hour",employeeList.get(i).getWorking_hour());
-                intent.putExtra("total_salary",employeeList.get(i).getTotal_salary());
-                intent.putExtra("work_normal",employeeList.get(i).getNormal());
-                intent.putExtra("work_over",employeeList.get(i).getOver());
-                intent.putExtra("work_night",employeeList.get(i).getNight());
-
+                intent.putExtra("worklist", work_list);
                 startActivity(intent);
             }
         });

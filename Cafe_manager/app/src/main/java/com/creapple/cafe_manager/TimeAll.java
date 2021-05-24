@@ -28,12 +28,11 @@ public class TimeAll extends AppCompatActivity {
     Button btn_day, btn_detail;
     private TextView pick_day;
     private DatePickerDialog.OnDateSetListener callbackMethod;
-    private List<Employee> employeeList;
     private ArrayList<Emp_work> workArrayList;
 
     @Override
     public void onBackPressed() {
-        //뒤로 가면 메인페이지로
+        super.onBackPressed();
     }
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,10 +55,10 @@ public class TimeAll extends AppCompatActivity {
                 intent.putExtra("worklist", work_list);
                 intent.putExtra("employeeList", emp_list);
                 startActivity(intent);
+                finish();
             }
         });
 
-        employeeList = new ArrayList<Employee>();
         workArrayList = new ArrayList<Emp_work>();
         SimpleDateFormat fm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         SimpleDateFormat fms = new SimpleDateFormat("HH:mm");
@@ -104,16 +103,17 @@ public class TimeAll extends AppCompatActivity {
 
                 month++;
                 pick_day.setText(year + "년 " + month + "월 " + dayOfMonth + "일");
-
+                TextView emp, work;
                 for (int i = 0; i<5;i++) {
                     int resId = getResources().getIdentifier("emp" + i, "id", "com.creapple.cafe_manager");
                     int resId2 = getResources().getIdentifier("work" + i, "id", "com.creapple.cafe_manager");
-                    TextView emp, work;
                     emp = findViewById(resId);
                     emp.setText(" ");
                     work = findViewById(resId2);
                     work.setText(" ");
                 }
+                work = findViewById(R.id.work0);
+                work.setText("근무한 직원이 없습니다.");
 
                 int n = 0;
                 int count = 0;
@@ -130,7 +130,7 @@ public class TimeAll extends AppCompatActivity {
                     String work_start = fms.format(workArrayList.get(n-j+1).work_start);
                     String work_end = fms.format(workArrayList.get(n-j+1).work_end);
 
-                    TextView emp, work;
+
                     emp = findViewById(resId);
                     emp.setText(workArrayList.get(n-j+1).emp_name);
                     work = findViewById(resId2);
