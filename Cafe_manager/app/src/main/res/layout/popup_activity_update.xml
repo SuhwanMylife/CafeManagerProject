@@ -93,7 +93,13 @@
             android:layout_margin="3dp"
             android:text="취소"
             android:onClick="mOnClose"/>
-
-
     </LinearLayout>
+
+    <Button
+        android:layout_gravity="center"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:text="삭 제"
+        android:id="@+id/button_delete"/>
+
 </LinearLayout>
