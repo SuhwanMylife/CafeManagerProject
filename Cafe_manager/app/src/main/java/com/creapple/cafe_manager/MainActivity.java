@@ -29,7 +29,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
+        tv_store = findViewById(R.id.tv_store);
+        Intent intent = getIntent();
+        String userId = intent.getStringExtra("userID");
+        String userPassword = intent.getStringExtra("userPassword");
+        String userNumber = intent.getStringExtra("userNumber");
+        String userStore = intent.getStringExtra("userStore");
+        tv_store.setText(userStore);
 
         new BackgroundTask().execute();
         Button btn_commute = findViewById(R.id.commute);
