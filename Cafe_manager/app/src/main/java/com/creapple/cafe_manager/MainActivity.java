@@ -25,12 +25,16 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class MainActivity extends AppCompatActivity {
+    public static Activity activity; 
+    Button btn_change, btn_setting;
     String emp_list, work_list;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        activity = Mainactivity.this; 
         TextView tv_store = findViewById(R.id.tv_store); // Hoxy?
         Intent intent = getIntent();
         String userId = intent.getStringExtra("userID");
@@ -38,6 +42,29 @@ public class MainActivity extends AppCompatActivity {
         String userNumber = intent.getStringExtra("userNumber");
         String userStore = intent.getStringExtra("userStore");
         tv_store.setText(userStore);
+        
+        btn_change = findViewById(R.id.btn_change);
+        btn_change.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ChangeInfoActivity.class);
+                intent.putExtra("userID", userId);
+                intent.putExtra("userPassword", userPassword);
+                intent.putExtra("userNumber", userNumber);
+                intent.putExtra("userStore", userStore);
+                startActivity(intent);
+
+            }
+        });
+        
+        btn_setting = findViewById(R.id.btn_setting);
+        btn_setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent);
+            }
+        });
 
         new BackgroundTask().execute();
         Button btn_commute = findViewById(R.id.commute);
