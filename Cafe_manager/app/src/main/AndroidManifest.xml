@@ -19,6 +19,10 @@
         <activity android:name=".FindingActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".InventoryMainActivity" />
+        <activity android:name=".SettingNoticeActivity" />
+        <activity android:name=".SettingInfoActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".ChangeInfoActivity" />
         <activity
             android:name=".PopupActivity"
             android:theme="@android:style/Theme.Dialog" />

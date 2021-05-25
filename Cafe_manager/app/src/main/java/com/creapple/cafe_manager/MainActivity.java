@@ -1,5 +1,6 @@
 package com.creapple.cafe_manager;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -25,7 +26,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class MainActivity extends AppCompatActivity {
-    public static Activity activity; 
+    public static Activity activity;
     Button btn_change, btn_setting;
     String emp_list, work_list;
     
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        activity = Mainactivity.this; 
+        activity = MainActivity.this;
         TextView tv_store = findViewById(R.id.tv_store); // Hoxy?
         Intent intent = getIntent();
         String userId = intent.getStringExtra("userID");

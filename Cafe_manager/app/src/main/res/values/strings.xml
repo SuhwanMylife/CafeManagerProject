@@ -27,5 +27,24 @@
     <string name="btn_simply">간략히</string>
     <string name="btn_detail">자세히</string>
     <string name="pick_day">선택된 날짜</string>
-    
+
+    <string name="ch">변경</string>
+    <string name="change_info">매장 정보 변경</string>
+    <string name="change_pw">비밀번호 변경</string>
+    <string name="ch_num">전화번호 변경</string>
+    <string name="ch_store">매장 이름 변경</string>
+    <string name="past_pw">기존 비밀번호</string>
+    <string name="ch_pw">변경할 비밀번호</string>
+    <string name="ch_pw_re">변경할 비밀번호 재입력</string>
+    <string name="past_pw_text">기존의 전화번호를 입력하세요</string>
+    <string name="ch_pw_text">새로 사용할 전화번호를 입력하세요</string>
+    <string name="ch_pw_re_text">비밀번호를 다시 한번 입력하세요</string>
+    <string name="logout">로그아웃</string>
+    <string name="set_alarm">알림 기능</string>
+    <string name="set_salary">월급날 알림</string>
+    <string name="set_lack">부족 수량 경고 알림</string>
+    <string name="set">설정하기</string>
+    <string name="app_info">이용 안내</string>
+    <string name="app_ver">앱 버전</string>
+    <string name="notice">공지사항</string>
 </resources>

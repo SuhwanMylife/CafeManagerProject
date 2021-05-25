@@ -44,7 +44,7 @@
                     android:layout_marginTop="1dp"
                     android:layout_marginRight="1dp"
                     android:gravity="center"
-                    android:id="@id/tv_id"
+                    android:id="@+id/tv_id"
                     android:background="@color/white"/>
             </TableRow>
             <TableRow
@@ -63,7 +63,7 @@
                     android:layout_marginTop="1dp"
                     android:layout_marginRight="1dp"
                     android:gravity="center"
-                    android:id="@id/tv_pw"
+                    android:id="@+id/tv_pw"
                     android:background="@color/white"/>
             </TableRow>
 
@@ -102,7 +102,7 @@
                     android:layout_marginTop="1dp"
                     android:layout_marginRight="1dp"
                     android:gravity="center"
-                    android:id="@id/tv_num"
+                    android:id="@+id/tv_num"
                     android:background="@color/white"/>
             </TableRow>
             <TableRow

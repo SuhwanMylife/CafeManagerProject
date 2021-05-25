@@ -1,4 +1,4 @@
-package com.example.sw15_usermanager;
+package com.creapple.cafe_manager;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +21,8 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import static com.creapple.cafe_manager.MainActivity.*;
+
 public class ChangeInfoActivity extends AppCompatActivity {
     private TextView tv_id, tv_pw, tv_num, tv_store;
     private EditText et_ch_num, et_ch_store, et_ch_pw, et_ch_pw_re, et_org_pw;
@@ -31,7 +33,7 @@ public class ChangeInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_info);
 
-        MainActivity Main = (MainActivity) MainActivity.activity; //이름 변경 필요
+        MainActivity Main = (MainActivity) activity; //이름 변경 필요
 
         Intent intent = getIntent();
         String userID = intent.getStringExtra("userID");

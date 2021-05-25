@@ -158,7 +158,8 @@
                 android:layout_gravity="center"
                 android:padding="1dp"
                 android:background="@color/white"
-                app:srcCompat="@drawable/cafe_help" />
+                />
+            //app:srcCompat="@drawable/cafe_help"
 
             <LinearLayout
                 android:layout_width="wrap_content"
