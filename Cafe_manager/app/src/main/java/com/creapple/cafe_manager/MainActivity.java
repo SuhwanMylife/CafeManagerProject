@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        tv_store = findViewById(R.id.tv_store);
+        TextView tv_store = findViewById(R.id.tv_store); // Hoxy?
         Intent intent = getIntent();
         String userId = intent.getStringExtra("userID");
         String userPassword = intent.getStringExtra("userPassword");
@@ -42,11 +43,20 @@ public class MainActivity extends AppCompatActivity {
         Button btn_commute = findViewById(R.id.commute);
         Button btn_management = (Button) findViewById(R.id.managementButton);
         Button btn_inventory_check = (Button) findViewById(R.id.inventory_check);
+        Button btn_order = (Button) findViewById(R.id.order);
 
         btn_inventory_check.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         Intent intent = new Intent(MainActivity.this, InventoryMainActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+        btn_order.setOnClickListener(
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, OrderMainActivity.class);
                         startActivity(intent);
                     }
                 });

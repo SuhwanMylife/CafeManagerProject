@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".OrderMainActivity"
     android:padding="10dp">
 
 
@@ -63,13 +63,13 @@
                 android:text="전체보기" />
 
             <Button
+                android:id="@+id/btn_order_final"
                 android:layout_margin="3dp"
                 android:text="발주"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
-                android:textSize="18dp"
-                android:onClick="mOnPopupClick"/>
+                android:textSize="18dp"/>
 
         </LinearLayout>
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".InventoryMainActivity"
     android:padding="10dp">
 
 
@@ -13,13 +13,25 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="5dp"
-            android:text="찾으실 품목을 입력 후 검색 버튼을 터치하세요."
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView_main_search" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:text="검색할 분류를 입력 후 검색 버튼을 터치하세요."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView_main_search" />
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="발주하기"
+                android:onClick="onOrderMainActivityClick"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_margin="5dp"

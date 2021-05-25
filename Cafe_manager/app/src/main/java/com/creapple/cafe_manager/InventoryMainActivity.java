@@ -104,30 +104,6 @@ public class InventoryMainActivity extends AppCompatActivity {
             }
         }));
 
-//            // 재고 품목 추가 버튼
-//            Button buttonInsert = (Button)findViewById(R.id.button_main_insert);
-//            buttonInsert.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//                    String pdt_name = mEditTextpdtname.getText().toString();
-//                    String pdt_classification = mEditTextpdtclassification.getText().toString();
-//                    String pdt_unit = mEditTextpdtunit.getText().toString();
-//                    String pdt_price = mEditTextpdtprice.getText().toString();
-//                    String pdt_stock = mEditTextpdtstock.getText().toString();
-//
-//                    InsertData task = new InsertData();
-//                    task.execute( "http://" + IP_ADDRESS + "/ListViewPractice/insert.php", pdt_name, pdt_classification, pdt_unit, pdt_price, pdt_stock);
-//
-////                    mEditTextpdtname.setText("");
-////                    mEditTextpdtclassification.setText("");
-////                    mEditTextpdtunit.setText("");
-////                    mEditTextpdtprice.setText("");
-////                    mEditTextpdtstock.setText("");
-//
-//                }
-//            });
-
 
         Button button_search = (Button) findViewById(R.id.button_main_search);
         button_search.setOnClickListener(new View.OnClickListener() {
@@ -169,6 +145,10 @@ public class InventoryMainActivity extends AppCompatActivity {
         // startActivityForResult(intent, 1);
     }
 
+    public void onOrderMainActivityClick(View v) {
+        Intent intent = new Intent(this, OrderMainActivity.class);
+        startActivity(intent);
+    }
 //    @Override
 //    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 //        super.onActivityResult(requestCode, resultCode, data);
