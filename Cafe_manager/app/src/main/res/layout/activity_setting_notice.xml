@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingNoticeActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="공지사항 - 5/11"
+        android:layout_marginTop="80dp"
+        android:paddingLeft="25dp"
+        android:textSize="30sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="배송 지연 안내\n\n현재 코로나19로 인해 전국적으로 택배 물량이 급증하지만, 항공기 운항 축소 및 결항으로 인해 일부 주문에 대해 배송 지연이 발생하고 있습니다.\n\n 모두가 힘든 시기인만큼 조금만 양해 부탁드립니다. 감사합니다."
+        android:layout_marginTop="30dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:textSize="20sp"/>
+
+
+</LinearLayout>

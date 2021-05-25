@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ChangeInfoActivity"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/change_info"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="25dp"
+            android:textSize="25sp"/>
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
+            android:stretchColumns="1">
+            <TableRow
+                android:background="@color/black">
+                <TextView
+                    android:text="@string/main_id"
+                    android:textSize="20sp"
+                    android:padding="10dip"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:background="@color/white" />
+                <TextView
+                    android:text="00"
+                    android:textSize="20sp"
+                    android:padding="10dip"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginRight="1dp"
+                    android:gravity="center"
+                    android:id="@id/tv_id"
+                    android:background="@color/white"/>
+            </TableRow>
+            <TableRow
+                android:background="@color/black">
+                <TextView
+                    android:text="@string/main_pw"
+                    android:textSize="20sp"
+                    android:padding="10dip"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:background="@color/white" />
+                <TextView
+                    android:text="00"
+                    android:textSize="20sp"
+                    android:padding="10dip"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginRight="1dp"
+                    android:gravity="center"
+                    android:id="@id/tv_pw"
+                    android:background="@color/white"/>
+            </TableRow>
+
+            <TableRow
+                android:background="@color/black">
+                <TextView
+                    android:text="@string/main_store"
+                    android:textSize="20sp"
+                    android:padding="10dip"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:background="@color/white" />
+                <TextView
+                    android:text="00"
+                    android:textSize="20sp"
+                    android:padding="10dip"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginRight="1dp"
+                    android:gravity="center"
+                    android:id="@+id/tv_store"
+                    android:background="@color/white"/>
+            </TableRow>
+            <TableRow
+                android:background="@color/black">
+                <TextView
+                    android:text="@string/main_num"
+                    android:textSize="20sp"
+                    android:padding="10dip"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:background="@color/white" />
+                <TextView
+                    android:text="00"
+                    android:textSize="20sp"
+                    android:padding="10dip"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginRight="1dp"
+                    android:gravity="center"
+                    android:id="@id/tv_num"
+                    android:background="@color/white"/>
+            </TableRow>
+            <TableRow
+                android:background="@color/black">
+                <TextView
+                    android:text="기타 정보"
+                    android:textSize="20sp"
+                    android:padding="10dip"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:background="@color/white" />
+                <TextView
+                    android:text="회사로 문의"
+                    android:textSize="20sp"
+                    android:padding="10dip"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginRight="1dp"
+                    android:gravity="center"
+                    android:background="@color/white"/>
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/change_info"
+            android:layout_marginTop="35dp"
+            android:paddingLeft="25dp"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ch_num"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="40dp"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/et_ch_num"
+            android:layout_width="333dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:inputType="number"
+            android:digits="0123456789"
+            android:hint="@string/text_num" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ch_store"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="40dp"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/et_ch_store"
+            android:layout_width="333dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:hint="@string/text_store" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="37dp"
+            android:id="@+id/btn_ch_info"
+            android:text="@string/ch"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/change_pw"
+            android:layout_marginTop="25dp"
+            android:paddingLeft="25dp"
+            android:textSize="25sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/past_pw"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="40dp"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/et_org_pw"
+            android:layout_width="333dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:inputType="textPassword"
+            android:hint="@string/past_pw_text" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ch_pw"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="40dp"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/et_ch_pw"
+            android:layout_width="333dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:inputType="textPassword"
+            android:hint="@string/ch_pw_text" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ch_pw_re"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="40dp"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/et_ch_pw_re"
+            android:layout_width="333dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:inputType="textPassword"
+            android:hint="@string/ch_pw_re_text" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="37dp"
+            android:id="@+id/btn_ch_pw"
+            android:text="@string/ch"/>
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/logout"
+            android:text="@string/logout"
+            android:textColor="@color/white"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="30dp"/>
+    </LinearLayout>
+</ScrollView>
+
+
+    <!-- 참고(안되면 다시 수정할것)
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="40dp" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_id"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="00"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="40dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_pw"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="00"
+            android:paddingLeft="25dp"
+            android:id="@+id/tv_pw"
+            android:textSize="20sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_store"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="00"
+            android:paddingLeft="25dp"
+            android:id="@+id/tv_store"
+            android:textSize="20sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_num"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="00"
+            android:paddingLeft="25dp"
+            android:id="@+id/tv_num"
+            android:textSize="20sp"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="기타 정보 확인 : 회사로 문의"
+        android:paddingLeft="40dp"
+        android:textSize="20sp"/>
+    -->
