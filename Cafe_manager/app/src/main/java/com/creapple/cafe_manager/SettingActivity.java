@@ -54,43 +54,5 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
-        final LinearLayout linear = (LinearLayout) View.inflate(SettingActivity.this, R.layout.dialog_num, null);
-        // final String[] array = {"첫","둘둘","셋셋셋"};
-        btn_salary = findViewById(R.id.btn_salary);
-        btn_salary.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new AlertDialog.Builder(SettingActivity.this)
-                        .setView(linear)
-                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                EditText salary = linear.findViewById(R.id.et_salary);
-                                value = Integer.parseInt(salary.getText().toString());
-                                Toast.makeText(getApplicationContext(), Integer.toString(value),  Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .setNegativeButton("취소", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        })
-                        .show();
-
-                /*
-                new AlertDialog.Builder(SettingActivity.this)
-                        .setTitle("제목")
-                        .setItems(array, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(getApplicationContext(), array[which],Toast.LENGTH_LONG).show();
-                            }
-                        })
-                        .show();*/
-            }
-        });
-
-
     }
 }
