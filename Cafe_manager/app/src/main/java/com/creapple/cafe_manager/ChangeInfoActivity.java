@@ -31,7 +31,7 @@ public class ChangeInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_info);
 
-        CheckActivity Main = (CheckActivity) CheckActivity.activity; //이름 변경 필요
+        MainActivity Main = (MainActivity) MainActivity.activity; //이름 변경 필요
 
         Intent intent = getIntent();
         String userID = intent.getStringExtra("userID");
