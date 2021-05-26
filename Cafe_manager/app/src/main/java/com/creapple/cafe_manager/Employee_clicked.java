@@ -34,11 +34,12 @@ public class Employee_clicked extends AppCompatActivity {
         name.setText("이름 : " + intent.getStringExtra("emp_name"));
         position.setText("직책 : " + intent.getStringExtra("position"));
         salary.setText("시급 : " + intent.getStringExtra("salary") + "원");
-        hour.setText(intent.getStringExtra("working_hour") + "시간 근무");
+        double work_time = Math.round(Double.parseDouble(intent.getStringExtra("working_hour"))*100)/100.0;
+        hour.setText(work_time + "시간 근무");
         double normal, over, night ;
-        normal = intent.getDoubleExtra("work_normal",0);
-        over = intent.getDoubleExtra("work_over",0);
-        night = intent.getDoubleExtra("work_night",0);
+        normal = Math.round(intent.getDoubleExtra("work_normal",0)*100)/100.0;
+        over = Math.round(intent.getDoubleExtra("work_over",0)*100)/100.0;
+        night = Math.round(intent.getDoubleExtra("work_over",0)*100)/100.0;
 
         total_salary.setText("총 급여 : " + myFormatter.format(intent.getDoubleExtra("total_salary",0)) +  "원");
 
