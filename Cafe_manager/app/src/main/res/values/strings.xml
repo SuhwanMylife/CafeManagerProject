@@ -27,6 +27,7 @@
     <string name="btn_simply">간략히</string>
     <string name="btn_detail">자세히</string>
     <string name="pick_day">선택된 날짜</string>
+    <string name="pick_term">기간을 선택 하세요</string>
 
     <string name="ch">변경</string>
     <string name="change_info">매장 정보 변경</string>

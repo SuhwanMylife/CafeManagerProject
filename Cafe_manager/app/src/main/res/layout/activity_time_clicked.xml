@@ -85,17 +85,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pick_day"
+            android:layout_marginLeft="10dp"
+            android:text="@string/pick_term"
             android:gravity="center"
             android:id="@+id/pick_term" />
     </LinearLayout>
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:stretchColumns="0,1,2">
+        android:stretchColumns="1,2">
 
         <TableRow
             android:background="@color/black">
@@ -107,7 +108,6 @@
                 android:background="@color/table_1col" />
 
             <TextView
-
                 android:layout_marginTop="1dp"
                 android:layout_marginRight="1dp"
                 android:background="@color/white"
@@ -122,6 +122,15 @@
                 android:gravity="center"
                 android:padding="20dip"
                 android:text="퇴근시간" />
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="1dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="총 근무시간" />
+
         </TableRow>
         <TableRow
             android:background="@color/black">
@@ -143,6 +152,12 @@
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
                 android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/work_time0"
+                android:padding="20dip"
+                android:layout_marginRight="1dp"
+                android:background="@color/white" />
         </TableRow>
         <TableRow
             android:background="@color/black">
@@ -161,6 +176,11 @@
                 android:background="@color/white" />
             <TextView
                 android:id="@+id/work_end1"
+                android:padding="20dip"
+                android:layout_marginRight="1dp"
+                android:background="@color/white" />
+            <TextView
+                android:id="@+id/work_time1"
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
                 android:background="@color/white" />
@@ -186,6 +206,11 @@
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
                 android:background="@color/white" />
+            <TextView
+                android:id="@+id/work_time2"
+                android:padding="20dip"
+                android:layout_marginRight="1dp"
+                android:background="@color/white" />
         </TableRow>
         <TableRow
             android:background="@color/black">
@@ -205,6 +230,11 @@
                 android:background="@color/white" />
             <TextView
                 android:id="@+id/work_end3"
+                android:padding="20dip"
+                android:layout_marginRight="1dp"
+                android:background="@color/white" />
+            <TextView
+                android:id="@+id/work_time3"
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
                 android:background="@color/white" />
@@ -230,6 +260,11 @@
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
                 android:background="@color/white" />
+            <TextView
+                android:id="@+id/work_time4"
+                android:padding="20dip"
+                android:layout_marginRight="1dp"
+                android:background="@color/white" />
         </TableRow>
         <TableRow
             android:background="@color/black">
@@ -249,6 +284,11 @@
                 android:background="@color/white" />
             <TextView
                 android:id="@+id/work_end5"
+                android:padding="20dip"
+                android:layout_marginRight="1dp"
+                android:background="@color/white" />
+            <TextView
+                android:id="@+id/work_time5"
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
                 android:background="@color/white" />
@@ -273,9 +313,21 @@
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
                 android:background="@color/white" />
+            <TextView
+                android:id="@+id/work_time6"
+                android:padding="20dip"
+                android:layout_marginRight="1dp"
+                android:background="@color/white" />
         </TableRow>
 
     </TableLayout>
+    <Button
+        android:id="@+id/btn_checkSalary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="급여 확인하기"
+        android:layout_gravity="right"
+        android:layout_marginRight="20dp"/>
 
 
 </LinearLayout>

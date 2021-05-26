@@ -86,6 +86,7 @@ public class TimeDetailActivity extends AppCompatActivity {
                 intent.putExtra("emp_name",employeeList.get(i).getEmp_name());
                 intent.putExtra("position",employeeList.get(i).getEmp_position());
                 intent.putExtra("worklist", work_list);
+                intent.putExtra("employeeList", emp_list);
                 startActivity(intent);
             }
         });
