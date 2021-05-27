@@ -1,13 +1,23 @@
 package com.creapple.cafe_manager;
 
-public class OrderPersonalData {
+import java.io.Serializable;
+
+public class OrderPersonalData implements Serializable {
     private String member_pdt_id;
     private String member_pdt_name;
     private String member_pdt_classification;
     private String member_pdt_unit;
     private String member_pdt_price;
     private String member_pdt_stock;
-    private String member_pdt_stock_number;
+    private String member_pdt_stock_num;
+
+    public OrderPersonalData(String member_pdt_name, String member_pdt_classification, String member_pdt_unit, String member_pdt_price, String member_pdt_stock, String member_pdt_stock_num) {
+    }
+
+    public OrderPersonalData() {
+
+    }
+
 
     public String getMember_pdt_id() {
         return member_pdt_id;
@@ -31,8 +41,8 @@ public class OrderPersonalData {
 
     public String getMember_pdt_stock() { return member_pdt_stock; }
 
-    public String getMember_pdt_stock_number() {
-        return member_pdt_stock_number;
+    public String getMember_pdt_stock_num() {
+        return member_pdt_stock_num;
     }
 
     public void setMember_pdt_id(String member_pdt_id) {
@@ -59,7 +69,8 @@ public class OrderPersonalData {
         this.member_pdt_stock = member_pdt_stock;
     }
 
-    public void setMember_pdt_stock_number(String member_pdt_stock_number) {
-        this.member_pdt_stock = member_pdt_stock_number;
+    public void setMember_pdt_stock_num(String member_pdt_stock_num) {
+        this.member_pdt_stock_num = member_pdt_stock_num;
     }
+
 }

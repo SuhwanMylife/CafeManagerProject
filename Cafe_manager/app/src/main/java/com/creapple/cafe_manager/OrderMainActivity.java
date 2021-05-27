@@ -51,6 +51,9 @@ public class OrderMainActivity extends AppCompatActivity {
         mAdapter = new OrderUserAdapter(this, mArrayList);
         mRecyclerView.setAdapter(mAdapter);
 
+        GetData task = new GetData();
+        task.execute( SERVER_ADDRESS + "/order_getjson.php", "");
+
         Button button_search = (Button) findViewById(R.id.button_main_search);
         button_search.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -63,7 +66,7 @@ public class OrderMainActivity extends AppCompatActivity {
                 mEditTextSearchKeyword.setText("");
 
                 GetData task = new GetData();
-                task.execute( SERVER_ADDRESS + "/inventory_query.php", Keyword);
+                task.execute( SERVER_ADDRESS + "/order_query.php", Keyword);
             }
         });
 
@@ -76,15 +79,22 @@ public class OrderMainActivity extends AppCompatActivity {
                 mAdapter.notifyDataSetChanged();
 
                 GetData task = new GetData();
-                task.execute( SERVER_ADDRESS + "/inventory_getjson.php", "");
+                task.execute( SERVER_ADDRESS + "/order_getjson.php", "");
             }
         });
 
+        // '발주' 버튼 눌렀을 때
         Button btn_order_final = (Button) findViewById(R.id.btn_order_final);
         btn_order_final.setOnClickListener(new View.OnClickListener() {
+
+            @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(OrderMainActivity.this, OrderFinalActivity.class);
-                startActivity(intent);
+                intent.putExtra("발주 품목", mArrayList);
+                startActivityForResult(intent, 0);
+
+//                Intent intent = new Intent(v.getContext(), OrderFinalActivity.class);
             }
         });
     }
@@ -205,6 +215,7 @@ public class OrderMainActivity extends AppCompatActivity {
         String TAG_PDT_UNIT ="pdt_unit";
         String TAG_PDT_PRICE ="pdt_price";
         String TAG_PDT_STOCK ="pdt_stock";
+        String TAG_PDT_STOCK_NUM ="pdt_stock_num";
 
 
         try {
@@ -222,6 +233,7 @@ public class OrderMainActivity extends AppCompatActivity {
                 String pdt_unit = item.getString(TAG_PDT_UNIT);
                 String pdt_price = item.getString(TAG_PDT_PRICE);
                 String pdt_stock = item.getString(TAG_PDT_STOCK);
+                String pdt_stock_num = item.getString(TAG_PDT_STOCK_NUM);
 
                 OrderPersonalData orderpersonalData = new OrderPersonalData();
 
@@ -231,6 +243,7 @@ public class OrderMainActivity extends AppCompatActivity {
                 orderpersonalData.setMember_pdt_unit(pdt_unit);
                 orderpersonalData.setMember_pdt_price(pdt_price);
                 orderpersonalData.setMember_pdt_stock(pdt_stock);
+                orderpersonalData.setMember_pdt_stock_num(pdt_stock_num);
 
                 mArrayList.add(orderpersonalData);
                 mAdapter.notifyDataSetChanged();
