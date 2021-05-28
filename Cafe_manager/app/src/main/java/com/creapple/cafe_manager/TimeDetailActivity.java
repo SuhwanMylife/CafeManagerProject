@@ -76,7 +76,6 @@ public class TimeDetailActivity extends AppCompatActivity {
                     Employee employee = new Employee(emp_name, emp_position);
                     employeeList.add(employee);
                 }
-
                 count++;
             }
         } catch (Exception e) {
@@ -92,6 +91,7 @@ public class TimeDetailActivity extends AppCompatActivity {
                 intent.putExtra("position",employeeList.get(i).getEmp_position());
                 intent.putExtra("worklist", work_list);
                 intent.putExtra("employeeList", emp_list);
+                intent.putExtra("userStore", userStore);
                 startActivity(intent);
             }
         });

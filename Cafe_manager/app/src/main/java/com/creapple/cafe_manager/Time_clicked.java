@@ -36,6 +36,8 @@ public class Time_clicked extends AppCompatActivity {
         Intent intent = getIntent();
         String work_list = intent.getStringExtra("worklist");
         String emp_list = intent.getStringExtra("employeeList");
+        String userStore = intent.getStringExtra("userStore");
+
         TextView emp_name = findViewById(R.id.name);
         TextView emp_position = findViewById(R.id.position);
         emp_name.setText(intent.getStringExtra("emp_name"));
@@ -161,6 +163,7 @@ public class Time_clicked extends AppCompatActivity {
                 Intent intent = new Intent(Time_clicked.this,ManagementActivity.class);
                 intent.putExtra("worklist", work_list);
                 intent.putExtra("employeeList", emp_list);
+                intent.putExtra("userStore", userStore);
                 startActivity(intent);
             }
         });

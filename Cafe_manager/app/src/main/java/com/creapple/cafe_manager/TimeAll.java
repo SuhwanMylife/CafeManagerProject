@@ -66,8 +66,8 @@ public class TimeAll extends AppCompatActivity {
         SimpleDateFormat fms = new SimpleDateFormat("HH:mm");
         SimpleDateFormat fmss = new SimpleDateFormat("yyyy년 M월 d일");
         SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
-        SimpleDateFormat monthFormat = new SimpleDateFormat("MM");
-        SimpleDateFormat dayFormat = new SimpleDateFormat("dd");
+        SimpleDateFormat monthFormat = new SimpleDateFormat("M");
+        SimpleDateFormat dayFormat = new SimpleDateFormat("d");
 
 
 
@@ -101,6 +101,42 @@ public class TimeAll extends AppCompatActivity {
             }
         } catch (JSONException | ParseException e) {
             e.printStackTrace();
+        }
+
+        TextView emp, work;
+        for (int i = 0; i<5;i++) {
+            int resId = getResources().getIdentifier("emp" + i, "id", "com.creapple.cafe_manager");
+            int resId2 = getResources().getIdentifier("work" + i, "id", "com.creapple.cafe_manager");
+            emp = findViewById(resId);
+            emp.setText(" ");
+            work = findViewById(resId2);
+            work.setText(" ");
+        }
+        work = findViewById(R.id.work0);
+        work.setText("근무한 직원이 없습니다.");
+
+        int n = 0;
+        int count = 0;
+        String te = pick_day.getText().toString();
+        String string = fmss.format(workArrayList.get(0).work_start);
+        for (int i = 0; i<workArrayList.size();i++){
+            if(pick_day.getText().equals(fmss.format(workArrayList.get(i).work_start))){
+                n = i;
+                count++;
+            }
+        }
+        for (int j = count; j > 0; j--){
+            int resId = getResources().getIdentifier("emp" + (count - j),"id","com.creapple.cafe_manager");
+            int resId2 = getResources().getIdentifier("work" + (count - j),"id","com.creapple.cafe_manager");
+
+            String work_start = fms.format(workArrayList.get(n-j+1).work_start);
+            String work_end = fms.format(workArrayList.get(n-j+1).work_end);
+
+
+            emp = findViewById(resId);
+            emp.setText(workArrayList.get(n-j+1).emp_name);
+            work = findViewById(resId2);
+            work.setText(work_start + " ~ " + work_end);
         }
 
         callbackMethod = new DatePickerDialog.OnDateSetListener() {
