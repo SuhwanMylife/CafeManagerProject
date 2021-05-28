@@ -38,9 +38,10 @@ public class ManagementActivity extends AppCompatActivity {
         workArrayList = new ArrayList<Emp_work>();
         adapter = new EmployeeListAdapter(getApplicationContext(), employeeList);
         listView.setAdapter(adapter);
+        String userStore = intent.getStringExtra("userStore");
+
         long now = System.currentTimeMillis();
         Date now_date = new Date(now);
-
 
         monthSpinner = (Spinner)findViewById(R.id.month_spinner);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM");
@@ -58,19 +59,21 @@ public class ManagementActivity extends AppCompatActivity {
                     JSONArray jsonArray = jsonObject.getJSONArray("response");
 
                     int count = 0;
-                    String employee_name, work_type, work_start, work_end = null;
+                    String employee_name, work_type, work_start, work_end, store_name = null;
                     SimpleDateFormat fm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     while (count < jsonArray.length()) {
                             JSONObject object = jsonArray.getJSONObject(count);
 
                         if( Integer.parseInt(simpleDateFormat.format(fm.parse(object.getString("work_end")))) == (position + 1)){
-                            employee_name = object.getString("employee_name");
-                            work_type = object.getString("work_type");
-                            work_start = object.getString("work_start");
-                            work_end = object.getString("work_end");
-                            Emp_work tmpWork = new Emp_work(employee_name, work_type, fm.parse(work_start), fm.parse(work_end));
-
-                            workArrayList.add(tmpWork);
+                            store_name = object.getString("store_name");
+                            if(store_name.equals(userStore)){
+                                employee_name = object.getString("employee_name");
+                                work_type = object.getString("work_type");
+                                work_start = object.getString("work_start");
+                                work_end = object.getString("work_end");
+                                Emp_work tmpWork = new Emp_work(employee_name, work_type, fm.parse(work_start), fm.parse(work_end));
+                                workArrayList.add(tmpWork);
+                            }
                         }
                         count++;
                     }
@@ -82,34 +85,37 @@ public class ManagementActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(intent.getStringExtra("employeeList"));
                     JSONArray jsonArray = jsonObject.getJSONArray("response");
                     int count = 0;
-                    String emp_name, emp_position, emp_salary, working_hour = null;
+                    String store_name, emp_name, emp_position, emp_salary, working_hour = null;
                     while (count < jsonArray.length()) {
 
                         JSONObject object = jsonArray.getJSONObject(count);
-                        emp_name = object.getString("emp_name");
-                        emp_position = object.getString("position");
-                        emp_salary = object.getString("salary");
-                        double work_normal = 0, work_over = 0, work_night = 0;
-                        for (int i = 0; i < workArrayList.size(); i++) {
-                            if (workArrayList.get(i).getEmp_name().equals(emp_name)) {
-                                if (workArrayList.get(i).getWork_type().equals("기본")) {
-                                    double temp = workArrayList.get(i).getWork_end().getTime() - workArrayList.get(i).getWork_start().getTime();
-                                    work_normal += temp/ 3600000;
-                                } else if (workArrayList.get(i).getWork_type().equals("연장")) {
-                                    double temp = workArrayList.get(i).getWork_end().getTime() - workArrayList.get(i).getWork_start().getTime();
-                                    work_over += temp/ 3600000;
-                                } else if (workArrayList.get(i).getWork_type().equals("야간")) {
-                                    double temp = workArrayList.get(i).getWork_end().getTime() - workArrayList.get(i).getWork_start().getTime();
-                                    work_night += temp/ 3600000;
+                        store_name = object.getString("store_name");
+                        if(store_name.equals(userStore)){
+                            emp_name = object.getString("emp_name");
+                            emp_position = object.getString("position");
+                            emp_salary = object.getString("salary");
+                            double work_normal = 0, work_over = 0, work_night = 0;
+                            for (int i = 0; i < workArrayList.size(); i++) {
+                                if (workArrayList.get(i).getEmp_name().equals(emp_name)) {
+                                    if (workArrayList.get(i).getWork_type().equals("기본")) {
+                                        double temp = workArrayList.get(i).getWork_end().getTime() - workArrayList.get(i).getWork_start().getTime();
+                                        work_normal += temp/ 3600000;
+                                    } else if (workArrayList.get(i).getWork_type().equals("연장")) {
+                                        double temp = workArrayList.get(i).getWork_end().getTime() - workArrayList.get(i).getWork_start().getTime();
+                                        work_over += temp/ 3600000;
+                                    } else if (workArrayList.get(i).getWork_type().equals("야간")) {
+                                        double temp = workArrayList.get(i).getWork_end().getTime() - workArrayList.get(i).getWork_start().getTime();
+                                        work_night += temp/ 3600000;
+                                    }
                                 }
+                                working_hour = Double.toString((work_normal + work_over + work_night));
                             }
-                            working_hour = Double.toString((work_normal + work_over + work_night));
+
+                            double total_salary = (work_normal + (work_over * 1.5) + (work_night * 1.3)) * Double.parseDouble(emp_salary);
+
+                            Employee employee = new Employee(emp_name, emp_position, emp_salary, working_hour, total_salary, work_normal, work_over, work_night);
+                            employeeList.add(employee);
                         }
-
-                        double total_salary = (work_normal + (work_over * 1.5) + (work_night * 1.3)) * Double.parseDouble(emp_salary);
-
-                        Employee employee = new Employee(emp_name, emp_position, emp_salary, working_hour, total_salary, work_normal, work_over, work_night);
-                        employeeList.add(employee);
                         count++;
                     }
                 } catch (Exception e) {

@@ -41,6 +41,7 @@ public class TimeAll extends AppCompatActivity {
         Intent intent = getIntent();
         String work_list = intent.getStringExtra("worklist");
         String emp_list = intent.getStringExtra("employeeList");
+        String userStore = intent.getStringExtra("userStore");
 
         //이거 정보 가져오는거처럼 똑같이 하면 될듯(체크페이지)
 
@@ -54,6 +55,7 @@ public class TimeAll extends AppCompatActivity {
                 Intent intent = new Intent(TimeAll.this, com.creapple.cafe_manager.TimeDetailActivity.class);
                 intent.putExtra("worklist", work_list);
                 intent.putExtra("employeeList", emp_list);
+                intent.putExtra("userStore", userStore);
                 startActivity(intent);
                 finish();
             }
@@ -80,17 +82,21 @@ public class TimeAll extends AppCompatActivity {
             JSONArray jsonArray = jsonObject.getJSONArray("response");
 
             int count = 0;
-            String employee_name, work_type, work_start, work_end = null;
+            String employee_name, work_type, work_start, work_end, store_name = null;
 
             while (count < jsonArray.length()) {
                 JSONObject object = jsonArray.getJSONObject(count);
-                employee_name = object.getString("employee_name");
-                work_type = object.getString("work_type");
-                work_start = object.getString("work_start");
-                work_end = object.getString("work_end");
-                Emp_work tmpWork = new Emp_work(employee_name, work_type, fm.parse(work_start), fm.parse(work_end));
+                store_name = object.getString("store_name");
+                if(store_name.equals(userStore)){
+                    employee_name = object.getString("employee_name");
+                    work_type = object.getString("work_type");
+                    work_start = object.getString("work_start");
+                    work_end = object.getString("work_end");
+                    Emp_work tmpWork = new Emp_work(employee_name, work_type, fm.parse(work_start), fm.parse(work_end));
 
-                workArrayList.add(tmpWork);
+                    workArrayList.add(tmpWork);
+                }
+
                 count++;
             }
         } catch (JSONException | ParseException e) {

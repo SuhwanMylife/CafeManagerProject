@@ -40,6 +40,7 @@ public class TimeDetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String work_list = intent.getStringExtra("worklist");
         String emp_list = intent.getStringExtra("employeeList");
+        String userStore = intent.getStringExtra("userStore");
 
         Button btn_simply = findViewById(R.id.btn_simply);
         btn_simply.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +49,7 @@ public class TimeDetailActivity extends AppCompatActivity {
                 Intent intent = new Intent(TimeDetailActivity.this, TimeAll.class);
                 intent.putExtra("worklist", work_list);
                 intent.putExtra("employeeList", emp_list);
+                intent.putExtra("userStore", userStore);
                 startActivity(intent);
                 finish();
             }
@@ -62,16 +64,19 @@ public class TimeDetailActivity extends AppCompatActivity {
             JSONObject jsonObject = new JSONObject(intent.getStringExtra("employeeList"));
             JSONArray jsonArray = jsonObject.getJSONArray("response");
             int count = 0;
-            String emp_name, emp_position = null;
+            String emp_name, emp_position, store_name = null;
             while (count < jsonArray.length()) {
-
                 JSONObject object = jsonArray.getJSONObject(count);
-                emp_name = object.getString("emp_name");
-                emp_position = object.getString("position");
+                store_name = object.getString("store_name");
+                if(store_name.equals(userStore)){
+                    emp_name = object.getString("emp_name");
+                    emp_position = object.getString("position");
 
 
-                Employee employee = new Employee(emp_name, emp_position);
-                employeeList.add(employee);
+                    Employee employee = new Employee(emp_name, emp_position);
+                    employeeList.add(employee);
+                }
+
                 count++;
             }
         } catch (Exception e) {

@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ManagementActivity.class);
                 intent.putExtra("worklist", work_list);
                 intent.putExtra("employeeList", emp_list);
+                intent.putExtra("userStore", userStore);
                 startActivity(intent);
             }
         });
@@ -106,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, TimeAll.class);
                 intent.putExtra("worklist", work_list);
                 intent.putExtra("employeeList", emp_list);
+                intent.putExtra("userStore", userStore);
                 startActivity(intent);
             }
         });
