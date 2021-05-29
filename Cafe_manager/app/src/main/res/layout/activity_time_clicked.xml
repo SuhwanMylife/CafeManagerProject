@@ -80,55 +80,65 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_term"
-            android:layout_marginLeft="55dp"
+            android:layout_marginLeft="5dp"
             android:text="@string/main_day" />
+
         <TextView
+            android:id="@+id/pick_term"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="@string/pick_term"
             android:gravity="center"
-            android:id="@+id/pick_term" />
+            android:textSize="10sp"
+            android:text="@string/pick_term" />
     </LinearLayout>
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_marginTop="10dp"
         android:stretchColumns="1,2">
 
         <TableRow
             android:background="@color/black">
             <TextView
+                android:layout_weight="1"
                 android:text="요일"
                 android:padding="20dip"
                 android:layout_margin="1dp"
                 android:gravity="center"
+                android:textSize="10sp"
                 android:background="@color/table_1col" />
 
             <TextView
+                android:layout_weight="1"
                 android:layout_marginTop="1dp"
                 android:layout_marginRight="1dp"
                 android:background="@color/white"
                 android:gravity="center"
+                android:textSize="10sp"
                 android:padding="20dip"
                 android:text="출근시간" />
 
             <TextView
+                android:layout_weight="1"
                 android:layout_marginTop="1dp"
                 android:layout_marginRight="1dp"
                 android:background="@color/white"
                 android:gravity="center"
+                android:textSize="10sp"
                 android:padding="20dip"
                 android:text="퇴근시간" />
 
             <TextView
+                android:layout_weight="1"
                 android:layout_marginTop="1dp"
                 android:layout_marginRight="1dp"
                 android:background="@color/white"
                 android:gravity="center"
                 android:padding="20dip"
+                android:textSize="10sp"
                 android:text="총 근무시간" />
 
         </TableRow>
@@ -136,7 +146,7 @@
             android:background="@color/black">
             <TextView
                 android:text="일"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginLeft="1dp"
                 android:layout_marginBottom="1dp"
                 android:layout_marginRight="1dp"
@@ -144,26 +154,30 @@
                 android:background="@color/table_1col" />
             <TextView
                 android:id="@+id/work_start0"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
             <TextView
                 android:id="@+id/work_end0"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
 
             <TextView
+                android:layout_weight="1"
                 android:id="@+id/work_time0"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
         </TableRow>
         <TableRow
             android:background="@color/black">
             <TextView
                 android:text="월"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginLeft="1dp"
                 android:layout_marginBottom="1dp"
                 android:layout_marginRight="1dp"
@@ -171,18 +185,22 @@
                 android:background="@color/table_1col" />
             <TextView
                 android:id="@+id/work_start1"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
             <TextView
                 android:id="@+id/work_end1"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
             <TextView
+                android:layout_weight="1"
                 android:id="@+id/work_time1"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
         </TableRow>
         <TableRow
@@ -190,7 +208,7 @@
             <TextView
                 android:text="화"
                 android:id="@+id/week2"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginLeft="1dp"
                 android:layout_marginBottom="1dp"
                 android:layout_marginRight="1dp"
@@ -198,18 +216,22 @@
                 android:background="@color/table_1col" />
             <TextView
                 android:id="@+id/work_start2"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
             <TextView
                 android:id="@+id/work_end2"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
             <TextView
+                android:layout_weight="1"
                 android:id="@+id/work_time2"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
         </TableRow>
         <TableRow
@@ -217,7 +239,7 @@
             <TextView
                 android:text="수"
                 android:id="@+id/week3"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginLeft="1dp"
                 android:layout_marginBottom="1dp"
                 android:layout_marginRight="1dp"
@@ -225,18 +247,22 @@
                 android:background="@color/table_1col" />
             <TextView
                 android:id="@+id/work_start3"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
             <TextView
                 android:id="@+id/work_end3"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
             <TextView
+                android:layout_weight="1"
                 android:id="@+id/work_time3"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
         </TableRow>
         <TableRow
@@ -244,7 +270,7 @@
             <TextView
                 android:text="목"
                 android:id="@+id/week4"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginLeft="1dp"
                 android:layout_marginBottom="1dp"
                 android:layout_marginRight="1dp"
@@ -252,18 +278,22 @@
                 android:background="@color/table_1col" />
             <TextView
                 android:id="@+id/work_start4"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
             <TextView
                 android:id="@+id/work_end4"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
             <TextView
+                android:layout_weight="1"
                 android:id="@+id/work_time4"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
         </TableRow>
         <TableRow
@@ -271,7 +301,7 @@
             <TextView
                 android:text="금"
                 android:id="@+id/week5"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginLeft="1dp"
                 android:layout_marginBottom="1dp"
                 android:layout_marginRight="1dp"
@@ -279,25 +309,29 @@
                 android:background="@color/table_1col" />
             <TextView
                 android:id="@+id/work_start5"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
             <TextView
                 android:id="@+id/work_end5"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
             <TextView
+                android:layout_weight="1"
                 android:id="@+id/work_time5"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
         </TableRow>
         <TableRow
             android:background="@color/black">
             <TextView
                 android:text="토"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginLeft="1dp"
                 android:layout_marginBottom="1dp"
                 android:layout_marginRight="1dp"
@@ -305,18 +339,22 @@
                 android:background="@color/table_1col" />
             <TextView
                 android:id="@+id/work_start6"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
             <TextView
                 android:id="@+id/work_end6"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
             <TextView
+                android:layout_weight="1"
                 android:id="@+id/work_time6"
-                android:padding="20dip"
+                android:padding="15dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
         </TableRow>
 

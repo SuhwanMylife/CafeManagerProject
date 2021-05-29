@@ -32,14 +32,15 @@
                 android:background="@color/black">
                 <TextView
                     android:text="@string/main_id"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:padding="10dip"
                     android:layout_margin="1dp"
                     android:gravity="center"
                     android:background="@color/white" />
                 <TextView
+                    android:layout_weight="1"
                     android:text="00"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:padding="10dip"
                     android:layout_marginTop="1dp"
                     android:layout_marginRight="1dp"
@@ -51,14 +52,15 @@
                 android:background="@color/black">
                 <TextView
                     android:text="@string/main_pw"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:padding="10dip"
                     android:layout_margin="1dp"
                     android:gravity="center"
                     android:background="@color/white" />
                 <TextView
+                    android:layout_weight="1"
                     android:text="00"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:padding="10dip"
                     android:layout_marginTop="1dp"
                     android:layout_marginRight="1dp"
@@ -71,14 +73,15 @@
                 android:background="@color/black">
                 <TextView
                     android:text="@string/main_store"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:padding="10dip"
                     android:layout_margin="1dp"
                     android:gravity="center"
                     android:background="@color/white" />
                 <TextView
+                    android:layout_weight="1"
                     android:text="00"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:padding="10dip"
                     android:layout_marginTop="1dp"
                     android:layout_marginRight="1dp"
@@ -90,14 +93,15 @@
                 android:background="@color/black">
                 <TextView
                     android:text="@string/main_num"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:padding="10dip"
                     android:layout_margin="1dp"
                     android:gravity="center"
                     android:background="@color/white" />
                 <TextView
+                    android:layout_weight="1"
                     android:text="00"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:padding="10dip"
                     android:layout_marginTop="1dp"
                     android:layout_marginRight="1dp"
@@ -109,14 +113,15 @@
                 android:background="@color/black">
                 <TextView
                     android:text="기타 정보"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:padding="10dip"
                     android:layout_margin="1dp"
                     android:gravity="center"
                     android:background="@color/white" />
                 <TextView
+                    android:layout_weight="1"
                     android:text="회사로 문의"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:padding="10dip"
                     android:layout_marginTop="1dp"
                     android:layout_marginRight="1dp"

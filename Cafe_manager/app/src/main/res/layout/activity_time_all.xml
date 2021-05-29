@@ -76,6 +76,7 @@
                 android:background="@color/table_1col" />
 
             <TextView
+                android:layout_weight="1"
                 android:layout_marginTop="1dp"
                 android:layout_marginRight="1dp"
                 android:background="@color/white"
@@ -94,10 +95,12 @@
                 android:gravity="center"
                 android:background="@color/table_1col" />
             <TextView
+                android:layout_weight="1"
                 android:id="@+id/work0"
                 android:text="직원이 없습니다."
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white" />
         </TableRow>
         <TableRow
@@ -111,9 +114,11 @@
                 android:gravity="center"
                 android:background="@color/table_1col" />
             <TextView
+                android:layout_weight="1"
                 android:id="@+id/work1"
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white"/>
         </TableRow>
         <TableRow
@@ -127,9 +132,11 @@
                 android:gravity="center"
                 android:background="@color/table_1col" />
             <TextView
+                android:layout_weight="1"
                 android:id="@+id/work2"
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white"/>
         </TableRow>
         <TableRow
@@ -143,9 +150,11 @@
                 android:gravity="center"
                 android:background="@color/table_1col" />
             <TextView
+                android:layout_weight="1"
                 android:id="@+id/work3"
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white"/>
         </TableRow>
         <TableRow
@@ -159,9 +168,11 @@
                 android:gravity="center"
                 android:background="@color/table_1col" />
             <TextView
+                android:layout_weight="1"
                 android:id="@+id/work4"
                 android:padding="20dip"
                 android:layout_marginRight="1dp"
+                android:gravity="center"
                 android:background="@color/white"/>
         </TableRow>
     </TableLayout>

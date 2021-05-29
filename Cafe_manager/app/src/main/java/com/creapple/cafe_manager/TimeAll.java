@@ -113,7 +113,7 @@ public class TimeAll extends AppCompatActivity {
             work.setText(" ");
         }
         work = findViewById(R.id.work0);
-        work.setText("근무한 직원이 없습니다.");
+        work.setText("직원이 없습니다.");
 
         int n = 0;
         int count = 0;
