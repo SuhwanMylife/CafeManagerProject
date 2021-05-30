@@ -368,7 +368,7 @@ public class SettingActivity extends AppCompatActivity {
         NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(this, PRIMARY_CHANNEL_ID)
                 .setContentTitle("You've been notified!")
                 .setContentText("This is your notification text.")
-                .setSmallIcon(R.mipmap.ic_cafelogo2)
+                .setSmallIcon(R.drawable.cafe_logo)
                 .setContentIntent(notificationPendingIntent)
                 .setAutoCancel(true);
         return notifyBuilder;

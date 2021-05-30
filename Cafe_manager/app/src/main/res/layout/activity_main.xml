@@ -82,12 +82,13 @@
                 android:textSize="30dp"
                 android:textColor="@color/black"
                 android:text="]" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" 입니다."
-                android:textSize="30dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="30dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -127,8 +128,10 @@
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:padding="0sp"
-                    android:scaleType="fitStart"
-                    android:src="@drawable/time"/>
+                    android:scaleType="fitCenter"
+                    android:layout_gravity="center"
+                    android:src="@drawable/time" />
+
                 <TextView
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
@@ -150,7 +153,8 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:background="@color/white"
-                    android:scaleType="fitStart"
+                    android:scaleType="fitCenter"
+                    android:layout_gravity="center"
                     android:src="@drawable/money"/>
                 <TextView
                     android:layout_gravity="center"
@@ -214,6 +218,7 @@
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:src="@drawable/stack"
+                    android:layout_gravity="center"
                     android:scaleType="fitCenter"/>
                 <TextView
                     android:layout_gravity="center"
@@ -236,6 +241,7 @@
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:src="@drawable/order"
+                    android:layout_gravity="center"
                     android:scaleType="fitCenter"/>
                 <TextView
                     android:layout_gravity="center"
@@ -261,6 +267,7 @@
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:scaleType="fitCenter"
+                    android:layout_gravity="center"
                     android:src="@drawable/order_list" />
                 <TextView
                     android:layout_gravity="center"

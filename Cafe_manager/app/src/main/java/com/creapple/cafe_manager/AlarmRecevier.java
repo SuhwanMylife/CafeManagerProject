@@ -1,4 +1,4 @@
-package com.example.sw15_usermanager;
+package com.creapple.cafe_manager;
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -46,7 +46,7 @@ public class AlarmRecevier extends BroadcastReceiver {
         //알림창 제목
         builder.setContentTitle("알람");
         //알림창 아이콘
-        builder.setSmallIcon(R.drawable.cafe_help);
+        builder.setSmallIcon(R.drawable.money);
         //알림창 터치시 자동 삭제
         builder.setAutoCancel(true);
 
