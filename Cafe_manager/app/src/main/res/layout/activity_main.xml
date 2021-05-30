@@ -12,25 +12,27 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="30dp"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_setting"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:text="설정" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="3" />
 
         <Button
             android:id="@+id/btn_change"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_gravity="right"
+            android:layout_weight="1"
             android:text="사용" />
     </LinearLayout>
 
@@ -83,12 +85,13 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
         android:layout_marginTop="30dp"
         android:layout_weight="3"
-        android:layout_marginLeft="35dp">
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -99,72 +102,81 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_weight="1">
             <Button
                 android:id="@+id/commute"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:width="100dp"
-                android:height="100dp"
+                android:padding="15sp"
+                android:layout_weight="1"
                 android:textSize="20dp"
-                android:text="출퇴근 관리"
+                android:text="출퇴근 \n관리"
                 android:layout_marginRight="20dp"/>
             <Button
                 android:id="@+id/managementButton"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:width="100dp"
-                android:height="100dp"
+                android:padding="15sp"
+                android:layout_weight="1"
                 android:textSize="20dp"
-                android:text="급여\n관리" />
-        </LinearLayout>
+                android:text="급여 \n관리" />
+            <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.5" />
+
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="0sp"
-        android:orientation="vertical"
-        android:layout_marginLeft="35dp"
-        android:layout_weight="3"
-        android:background="@color/white">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="재고관리"
-            android:textSize="20dp"
-            android:textColor="@color/black"/>
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/inventory_check"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:width="100dp"
-                android:height="100dp"
-                android:textSize="20dp"
-                android:text="재고\n확인"
-                android:layout_marginRight="20dp"/>
-            <Button
-                android:id="@+id/order"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:width="100dp"
-                android:height="100dp"
-                android:textSize="20dp"
-                android:text="발주\n하기"
-                android:layout_marginRight="20dp"/>
-            <Button
-                android:id="@+id/order_detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:width="100dp"
-                android:height="100dp"
-                android:textSize="20dp"
-                android:text="발주\n내역"/>
-        </LinearLayout>
-    </LinearLayout>
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:background="@color/white"
+            android:orientation="vertical">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="재고관리"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/inventory_check"                android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="15sp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp"
+                    android:text="재고\n확인"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/order"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="15sp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp"
+                    android:text="발주\n하기"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/order_detail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="15sp"
+                    android:layout_weight="1"
+                    android:text="발주\n내역"
+                    android:textSize="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>
