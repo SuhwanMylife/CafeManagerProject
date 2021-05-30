@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -27,7 +28,7 @@ import java.text.SimpleDateFormat;
 
 public class MainActivity extends AppCompatActivity {
     public static Activity activity;
-    Button btn_change, btn_setting;
+    ImageButton btn_change, btn_setting;
     String emp_list, work_list;
     
     @Override
@@ -68,10 +69,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         new BackgroundTask().execute();
-        Button btn_commute = findViewById(R.id.commute);
-        Button btn_management = (Button) findViewById(R.id.managementButton);
-        Button btn_inventory_check = (Button) findViewById(R.id.inventory_check);
-        Button btn_order = (Button) findViewById(R.id.order);
+        ImageButton btn_commute = findViewById(R.id.commute);
+        ImageButton btn_management = (ImageButton) findViewById(R.id.managementButton);
+        ImageButton btn_inventory_check = (ImageButton) findViewById(R.id.inventory_check);
+        ImageButton btn_order = (ImageButton) findViewById(R.id.order);
 
         btn_inventory_check.setOnClickListener(
                 new Button.OnClickListener() {

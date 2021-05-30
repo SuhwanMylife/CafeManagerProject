@@ -16,7 +16,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
             android:layout_gravity="center"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:src="@drawable/cafe_logo"/>
 
     <EditText
         android:id="@+id/et_login_id"

@@ -22,7 +22,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@drawable/user_color" />
 
         <LinearLayout
             android:layout_width="wrap_content"
