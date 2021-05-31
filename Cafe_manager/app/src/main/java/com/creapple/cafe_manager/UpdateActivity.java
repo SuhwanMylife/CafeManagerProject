@@ -29,7 +29,7 @@ public class UpdateActivity extends AppCompatActivity {
 
     private static String IP_ADDRESS = "203.255.3.246";
     private static String TAG = "phpexample";
-    
+
     //추가(5.31)
     // Channel에 대한 id 생성
     private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
@@ -94,10 +94,10 @@ public class UpdateActivity extends AppCompatActivity {
                 if (set_st != 0) {
                     int lack2 = ((SettingActivity)SettingActivity.context_setting).lack;
                     if (temp<=lack2) {
-                        sendNotification();
+                        sendNotification(pdt_name);
                     }
                 }
-                
+
 //                Intent intent = new Intent();
 //                setResult(RESULT_OK, intent);
                 //데이터 전달하기
@@ -109,8 +109,8 @@ public class UpdateActivity extends AppCompatActivity {
                 // finish();
             }
         });
-        
-        createNotificationChannel(); //추가(5.31)
+
+        createNotificationChannel();
 
         Button buttonDelete = (Button)findViewById(R.id.button_delete);
         buttonDelete.setOnClickListener(new View.OnClickListener() {
@@ -327,7 +327,7 @@ public class UpdateActivity extends AppCompatActivity {
 
         }
     }
-    
+
     //추가(5.31)
     public void createNotificationChannel()
     {
@@ -352,7 +352,7 @@ public class UpdateActivity extends AppCompatActivity {
     }
 
     // Notification Builder를 만드는 메소드
-    private NotificationCompat.Builder getNotificationBuilder() {
+    private NotificationCompat.Builder getNotificationBuilder(String name) {
 
         //클릭했을때 액티비티 이동, 액티비티명 변경
         Intent notificationIntent = new Intent(this, LoginActivity.class);
@@ -362,7 +362,7 @@ public class UpdateActivity extends AppCompatActivity {
 
         NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(this, PRIMARY_CHANNEL_ID)
                 .setContentTitle("재고 수량 부족 경고")
-                .setContentText("현재 남은 재고 수량이 부족합니다!")
+                .setContentText(name +"의 현재 재고 수량이 부족합니다!")
                 .setSmallIcon(R.drawable.warning)
                 .setContentIntent(notificationPendingIntent)
                 .setAutoCancel(true);
@@ -370,9 +370,9 @@ public class UpdateActivity extends AppCompatActivity {
     }
 
     // Notification을 보내는 메소드
-    public void sendNotification(){
+    public void sendNotification(String name){
         // Builder 생성
-        NotificationCompat.Builder notifyBuilder = getNotificationBuilder();
+        NotificationCompat.Builder notifyBuilder = getNotificationBuilder(name);
         // Manager를 통해 notification 디바이스로 전달
         mNotificationManager.notify(NOTIFICATION_ID,notifyBuilder.build());
     }
