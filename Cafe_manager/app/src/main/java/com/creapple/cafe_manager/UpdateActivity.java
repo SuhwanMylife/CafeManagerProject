@@ -1,6 +1,11 @@
 package com.creapple.cafe_manager;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -23,6 +29,14 @@ public class UpdateActivity extends AppCompatActivity {
 
     private static String IP_ADDRESS = "203.255.3.246";
     private static String TAG = "phpexample";
+    
+    //추가(5.31)
+    // Channel에 대한 id 생성
+    private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
+    // Channel을 생성 및 전달해 줄 수 있는 Manager 생성
+    private NotificationManager mNotificationManager;
+    // Notification에 대한 ID 생성
+    private static final int NOTIFICATION_ID = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,6 +88,16 @@ public class UpdateActivity extends AppCompatActivity {
                 InsertData task = new InsertData();
                 task.execute( "http://ghtjd8264.dothome.co.kr/inventory_update.php", pdt_name, pdt_classification, pdt_unit, pdt_price, pdt_stock);
 
+                //추가(5.31)
+                int temp = Integer.parseInt(pdt_stock);
+                int set_st = ((MainActivity)MainActivity.context_main).set_state;
+                if (set_st != 0) {
+                    int lack2 = ((SettingActivity)SettingActivity.context_setting).lack;
+                    if (temp<=lack2) {
+                        sendNotification();
+                    }
+                }
+                
 //                Intent intent = new Intent();
 //                setResult(RESULT_OK, intent);
                 //데이터 전달하기
@@ -85,6 +109,8 @@ public class UpdateActivity extends AppCompatActivity {
                 // finish();
             }
         });
+        
+        createNotificationChannel(); //추가(5.31)
 
         Button buttonDelete = (Button)findViewById(R.id.button_delete);
         buttonDelete.setOnClickListener(new View.OnClickListener() {
@@ -300,6 +326,55 @@ public class UpdateActivity extends AppCompatActivity {
             }
 
         }
+    }
+    
+    //추가(5.31)
+    public void createNotificationChannel()
+    {
+        //notification manager 생성
+        mNotificationManager = (NotificationManager)
+                getSystemService(NOTIFICATION_SERVICE);
+        // 기기(device)의 SDK 버전 확인 ( SDK 26 버전 이상인지 - VERSION_CODES.O = 26)
+        if(android.os.Build.VERSION.SDK_INT
+                >= android.os.Build.VERSION_CODES.O){
+            //Channel 정의 생성자( construct 이용 )
+            NotificationChannel notificationChannel = new NotificationChannel(PRIMARY_CHANNEL_ID
+                    ,"Test Notification",mNotificationManager.IMPORTANCE_HIGH);
+            //Channel에 대한 기본 설정
+            notificationChannel.enableLights(true);
+            notificationChannel.setLightColor(Color.RED);
+            notificationChannel.enableVibration(true);
+            notificationChannel.setDescription("Notification from Mascot");
+            // Manager을 이용하여 Channel 생성
+            mNotificationManager.createNotificationChannel(notificationChannel);
+        }
+
+    }
+
+    // Notification Builder를 만드는 메소드
+    private NotificationCompat.Builder getNotificationBuilder() {
+
+        //클릭했을때 액티비티 이동, 액티비티명 변경
+        Intent notificationIntent = new Intent(this, LoginActivity.class);
+        //PendingIntent 정의 (인텐트를 감싸는 인텐트)
+        PendingIntent notificationPendingIntent = PendingIntent.getActivity
+                (this, NOTIFICATION_ID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(this, PRIMARY_CHANNEL_ID)
+                .setContentTitle("재고 수량 부족 경고")
+                .setContentText("현재 남은 재고 수량이 부족합니다!")
+                .setSmallIcon(R.drawable.warning)
+                .setContentIntent(notificationPendingIntent)
+                .setAutoCancel(true);
+        return notifyBuilder;
+    }
+
+    // Notification을 보내는 메소드
+    public void sendNotification(){
+        // Builder 생성
+        NotificationCompat.Builder notifyBuilder = getNotificationBuilder();
+        // Manager를 통해 notification 디바이스로 전달
+        mNotificationManager.notify(NOTIFICATION_ID,notifyBuilder.build());
     }
 }
 
