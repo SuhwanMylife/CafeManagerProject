@@ -4,12 +4,14 @@ import java.io.Serializable;
 
 public class OrderPersonalData implements Serializable {
     private String member_pdt_id;
+    private String member_pdt_date;
     private String member_pdt_name;
     private String member_pdt_classification;
     private String member_pdt_unit;
     private String member_pdt_price;
     private String member_pdt_stock;
     private String member_pdt_stock_num;
+    private String member_pdt_price_total;
 
     public OrderPersonalData(String member_pdt_name, String member_pdt_classification, String member_pdt_unit, String member_pdt_price, String member_pdt_stock, String member_pdt_stock_num) {
     }
@@ -73,4 +75,20 @@ public class OrderPersonalData implements Serializable {
         this.member_pdt_stock_num = member_pdt_stock_num;
     }
 
+    public String getMember_pdt_date() {
+        return member_pdt_date;
+    }
+
+    public void setMember_pdt_date(String member_pdt_date) {
+        this.member_pdt_date = member_pdt_date;
+    }
+
+    public void setMember_pdt_price_total(String member_pdt_price_total) {
+        this.member_pdt_price_total = member_pdt_price_total;
+    }
+
+    public String getMember_pdt_price_total() {
+        return member_pdt_price_total;
+    }
 }
+

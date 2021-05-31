@@ -52,7 +52,7 @@ public class OrderMainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         GetData task = new GetData();
-        task.execute( SERVER_ADDRESS + "/order_getjson.php", "");
+        task.execute( SERVER_ADDRESS + "/inventory_getjson.php", "");
 
         Button button_search = (Button) findViewById(R.id.button_main_search);
         button_search.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +66,7 @@ public class OrderMainActivity extends AppCompatActivity {
                 mEditTextSearchKeyword.setText("");
 
                 GetData task = new GetData();
-                task.execute( SERVER_ADDRESS + "/order_query.php", Keyword);
+                task.execute( SERVER_ADDRESS + "/inventory_query.php", Keyword);
             }
         });
 
@@ -79,7 +79,7 @@ public class OrderMainActivity extends AppCompatActivity {
                 mAdapter.notifyDataSetChanged();
 
                 GetData task = new GetData();
-                task.execute( SERVER_ADDRESS + "/order_getjson.php", "");
+                task.execute( SERVER_ADDRESS + "/inventory_getjson.php", "");
             }
         });
 
