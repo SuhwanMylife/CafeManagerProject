@@ -31,6 +31,8 @@
         <activity android:name=".OrderMainActivity"/>
         <activity android:name=".OrderFinalActivity"
             android:parentActivityName=".OrderMainActivity"/>
+        <activity android:name=".OrderCheckActivity"/>
+        <activity android:name=".OrderCheckDetailActivity"/>
         <activity android:name=".TimeAll" />
         <activity android:name=".TimeDetailActivity" />
         <activity android:name=".LoginActivity">

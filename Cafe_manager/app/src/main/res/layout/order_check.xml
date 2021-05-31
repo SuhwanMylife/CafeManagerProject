@@ -4,50 +4,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:padding="10dp">
+    android:padding="10dp"
+    tools:context=".OrderCheckActivity">
 
 
     <TextView
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="5dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="이전 발주 내역을 확인하세요."
+        android:id="@+id/textView_main_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView_main_search" />
-
-    <LinearLayout
-        android:layout_margin="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:text="이전 발주 내역을 확인하세요." />
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:gravity="center">-->
+
 
 <!--        <Spinner-->
-<!--            android:layout_margin="2dp"-->
-<!--            android:id="@+id/month_spinner"-->
-<!--            android:entries="@array/month"-->
-<!--            android:layout_width="150dp"-->
+<!--            android:id="@+id/year_spinner"-->
+<!--            android:layout_width="130dp"-->
 <!--            android:layout_height="40dp"-->
-<!--            android:layout_gravity="right"/>-->
-        <Button
-            android:layout_margin="2dp"
-            android:id="@+id/button_main_search"
-            android:textSize="15dp"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="검색" />
+<!--            android:layout_gravity="right"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:entries="@array/연도" />-->
 
-    </LinearLayout>
+<!--        <Spinner-->
+<!--            android:id="@+id/month_spinner"-->
+<!--            android:layout_width="130dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_gravity="right"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:entries="@array/월" />-->
+
+<!--    </LinearLayout>-->
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_margin="5dp"
+        android:id="@+id/listView_main_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6"
-        android:id="@+id/listView_main_list" />
+        android:layout_margin="5dp"
+        android:layout_weight="6" />
 
 
 </LinearLayout>

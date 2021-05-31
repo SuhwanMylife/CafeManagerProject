@@ -61,7 +61,7 @@ public class OrderFinalActivity extends AppCompatActivity {
 //            }
 //        }
 
-        for (int i = mArrayList.size()-1; i > 0; i--) {
+        for (int i = mArrayList.size()-1; i >= 0; i--) {
             int stock_num = Integer.parseInt(String.valueOf(mArrayList.get(i).getMember_pdt_stock_num()));
             if (stock_num == 0) {
                 mArrayList.remove(i);

@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton btn_management = (ImageButton) findViewById(R.id.managementButton);
         ImageButton btn_inventory_check = (ImageButton) findViewById(R.id.inventory_check);
         ImageButton btn_order = (ImageButton) findViewById(R.id.order);
+        ImageButton btn_order_detail = (ImageButton) findViewById(R.id.order_detail);
 
         btn_inventory_check.setOnClickListener(
                 new Button.OnClickListener() {
@@ -95,6 +96,14 @@ public class MainActivity extends AppCompatActivity {
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         Intent intent = new Intent(MainActivity.this, OrderMainActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+        btn_order_detail.setOnClickListener(
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, OrderCheckActivity.class);
                         startActivity(intent);
                     }
                 });
