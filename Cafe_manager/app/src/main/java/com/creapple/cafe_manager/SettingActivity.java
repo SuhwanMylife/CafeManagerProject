@@ -54,17 +54,18 @@ public class SettingActivity extends AppCompatActivity {
     private static final String ex = "Switch";
     private static final String ex2 = "Switch2";
 
+    //추가(5.31)
+    public static Context context_setting; // context 변수 선언
+    public int lack = 1000; // 다른 Activity에서 접근할 변수
+    
+    //추가(5.31) - 뒤로갈때 값 추가
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(SettingActivity.this, MainActivity.class);
+        startActivity(intent);
+        ((MainActivity)MainActivity.context_main).set_state++;
 
-    //임시로 추가한거(삭제)
-    // Channel에 대한 id 생성
-    private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
-    // Channel을 생성 및 전달해 줄 수 있는 Manager 생성
-    private NotificationManager mNotificationManager;
-    // Notification에 대한 ID 생성
-    private static final int NOTIFICATION_ID = 0;
-    // Notification을 호출할 button 변수
-    private Button button_notify;
-
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,7 +131,7 @@ public class SettingActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "비활성화 되었습니다", Toast.LENGTH_SHORT).show();
                     btn_lack.setEnabled(false);
                     btn_lack.setBackgroundColor(getResources().getColor(R.color.colorGray));
-                    lack = 0;
+                    lack = 1000; //변경(5.31)
                     editor.putBoolean(ex2, false);
                 }
                 editor.commit();
