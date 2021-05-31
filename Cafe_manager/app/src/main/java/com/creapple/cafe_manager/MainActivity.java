@@ -30,11 +30,17 @@ public class MainActivity extends AppCompatActivity {
     public static Activity activity;
     ImageButton btn_change, btn_setting;
     String emp_list, work_list;
+    //추가(5.31)
+    public static Context context_main; // context 변수 선언
+    public static int set_state = 0;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        //추가(5.31)
+        context_main = this; // onCreate main 에서 this 할당 (공유)
         
         activity = MainActivity.this;
         TextView tv_store = findViewById(R.id.tv_store); // Hoxy?
