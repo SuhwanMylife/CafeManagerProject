@@ -1,6 +1,7 @@
 package com.creapple.cafe_manager;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -33,24 +34,25 @@ public class MainActivity extends AppCompatActivity {
     //추가(5.31)
     public static Context context_main; // context 변수 선언
     public static int set_state = 0;
-    
+    public String userId, userPassword, userNumber, userStore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         //추가(5.31)
         context_main = this; // onCreate main 에서 this 할당 (공유)
-        
+
         activity = MainActivity.this;
         TextView tv_store = findViewById(R.id.tv_store); // Hoxy?
         Intent intent = getIntent();
-        String userId = intent.getStringExtra("userID");
-        String userPassword = intent.getStringExtra("userPassword");
-        String userNumber = intent.getStringExtra("userNumber");
-        String userStore = intent.getStringExtra("userStore");
+        userId = intent.getStringExtra("userID");
+        userPassword = intent.getStringExtra("userPassword");
+        userNumber = intent.getStringExtra("userNumber");
+        userStore = intent.getStringExtra("userStore");
         tv_store.setText(userStore);
-        
+
         btn_change = findViewById(R.id.btn_change);
         btn_change.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,11 +66,12 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        
+
         btn_setting = findViewById(R.id.btn_setting);
         btn_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                set_state++;
                 Intent intent = new Intent(MainActivity.this, SettingActivity.class);
                 startActivity(intent);
             }
@@ -225,7 +228,5 @@ public class MainActivity extends AppCompatActivity {
             new JsonParse().execute();
         }
     }
-
-
-
 }
+
