@@ -40,7 +40,7 @@ public class SettingActivity extends AppCompatActivity {
     TextView text_info, text_contact;
     LinearLayout LL_notice;
     Button btn_salary, btn_lack; //추가
-    int value, lack;
+    int value;
     long now = System.currentTimeMillis();
     Date date = new Date(now);
 
@@ -57,20 +57,28 @@ public class SettingActivity extends AppCompatActivity {
     //추가(5.31)
     public static Context context_setting; // context 변수 선언
     public int lack = 1000; // 다른 Activity에서 접근할 변수
-    
-    //추가(5.31) - 뒤로갈때 값 추가
+
+    //추가(5.31)
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(SettingActivity.this, MainActivity.class);
+        intent.putExtra("userID", ((MainActivity)MainActivity.context_main).userId);
+        intent.putExtra("userPassword", ((MainActivity)MainActivity.context_main).userPassword);
+        intent.putExtra("userNumber", ((MainActivity)MainActivity.context_main).userNumber);
+        intent.putExtra("userStore", ((MainActivity)MainActivity.context_main).userStore);
         startActivity(intent);
         ((MainActivity)MainActivity.context_main).set_state++;
 
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+
+        //추가(5.31)
+        context_setting = this; // onCreate setting 에서 this 할당 (공유)
 
         //액션바 없애기...
         ActionBar actionBar = getSupportActionBar();
@@ -233,8 +241,6 @@ public class SettingActivity extends AppCompatActivity {
                                 String mes = "기준을"+edit.getText().toString() + "개로 설정하였습니다.";
                                 Toast.makeText(getApplicationContext(), mes, Toast.LENGTH_SHORT).show();
 
-                                //임시 추가(삭제)
-                                //sendNotification();
                             }
                         }
                     }
@@ -247,8 +253,6 @@ public class SettingActivity extends AppCompatActivity {
                 dig.show();
             }
         });
-        //임시 추가(삭제)
-        //createNotificationChannel();
 
 
         /*
@@ -289,23 +293,23 @@ public class SettingActivity extends AppCompatActivity {
                         })
                         .show();*/
         //    }
-     //   });
+        //   });
     }
-/*
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    /*
+        @Override
+        protected void onDestroy() {
+            super.onDestroy();
 
-        SharedPreferences sharedPreferences = getSharedPreferences(shared, 0);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        boolean st_salary = sharedPreferences.getBoolean("st_salary", false);
-        if (st_salary = true) {
-            tg.setChecked(true);
-        } else {
-            tg.setChecked(false);
+            SharedPreferences sharedPreferences = getSharedPreferences(shared, 0);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            boolean st_salary = sharedPreferences.getBoolean("st_salary", false);
+            if (st_salary = true) {
+                tg.setChecked(true);
+            } else {
+                tg.setChecked(false);
+            }
         }
-    }
-*/
+    */
     private void setAlarm() {
         //AlarmReceiver에 값 전달
         Intent receiverIntent = new Intent(SettingActivity.this, AlarmRecevier.class);
@@ -333,53 +337,4 @@ public class SettingActivity extends AppCompatActivity {
 
     }
 
-    //임시 추가(삭제) 함수 3개
-    //채널을 만드는 메소드
-    public void createNotificationChannel()
-    {
-        //notification manager 생성
-        mNotificationManager = (NotificationManager)
-                getSystemService(NOTIFICATION_SERVICE);
-        // 기기(device)의 SDK 버전 확인 ( SDK 26 버전 이상인지 - VERSION_CODES.O = 26)
-        if(android.os.Build.VERSION.SDK_INT
-                >= android.os.Build.VERSION_CODES.O){
-            //Channel 정의 생성자( construct 이용 )
-            NotificationChannel notificationChannel = new NotificationChannel(PRIMARY_CHANNEL_ID
-                    ,"Test Notification",mNotificationManager.IMPORTANCE_HIGH);
-            //Channel에 대한 기본 설정
-            notificationChannel.enableLights(true);
-            notificationChannel.setLightColor(Color.RED);
-            notificationChannel.enableVibration(true);
-            notificationChannel.setDescription("Notification from Mascot");
-            // Manager을 이용하여 Channel 생성
-            mNotificationManager.createNotificationChannel(notificationChannel);
-        }
-
-    }
-
-    // Notification Builder를 만드는 메소드
-    private NotificationCompat.Builder getNotificationBuilder() {
-
-        //클릭했을때 액티비티 이동, 액티비티명 변경
-        Intent notificationIntent = new Intent(this, LoginActivity.class);
-        //PendingIntent 정의 (인텐트를 감싸는 인텐트)
-        PendingIntent notificationPendingIntent = PendingIntent.getActivity
-                (this, NOTIFICATION_ID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(this, PRIMARY_CHANNEL_ID)
-                .setContentTitle("You've been notified!")
-                .setContentText("This is your notification text.")
-                .setSmallIcon(R.drawable.cafe_logo)
-                .setContentIntent(notificationPendingIntent)
-                .setAutoCancel(true);
-        return notifyBuilder;
-    }
-
-    // Notification을 보내는 메소드
-    public void sendNotification(){
-        // Builder 생성
-        NotificationCompat.Builder notifyBuilder = getNotificationBuilder();
-        // Manager를 통해 notification 디바이스로 전달
-        mNotificationManager.notify(NOTIFICATION_ID,notifyBuilder.build());
-    }
 }
