@@ -108,9 +108,8 @@ public class ManagementActivity extends AppCompatActivity {
                                         work_night += temp/ 3600000;
                                     }
                                 }
-                                working_hour = Double.toString((work_normal + work_over + work_night));
                             }
-
+                            working_hour = Double.toString((work_normal + work_over + work_night));
                             double total_salary = (work_normal + (work_over * 1.5) + (work_night * 1.3)) * Double.parseDouble(emp_salary);
 
                             Employee employee = new Employee(emp_name, emp_position, emp_salary, working_hour, total_salary, work_normal, work_over, work_night);
