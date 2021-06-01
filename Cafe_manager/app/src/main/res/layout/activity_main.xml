@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@color/white">
+    android:background="@color/base">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:id="@+id/btn_setting"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:background="@color/base"
             android:src="@drawable/setting"
             android:scaleType="fitCenter"
             android:layout_weight="1"
@@ -35,7 +35,7 @@
             android:id="@+id/btn_change"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:background="@color/base"
             android:src="@drawable/user"
             android:scaleType="fitCenter"
             android:layout_gravity="right"
@@ -47,12 +47,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"
         android:layout_gravity="center" >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginTop="20dp"
             android:text="어서오세요\n행복이 가득한"
             android:textSize="30dp"
             android:textColor="@color/black"/>
@@ -93,19 +95,24 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
         android:orientation="vertical"
         android:layout_marginTop="30dp"
         android:layout_weight="1"
         android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp">
+        android:layout_marginRight="35dp"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:background="@drawable/round_border" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="직원관리"
-            android:textSize="20dp"
+            android:textSize="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
             android:textColor="@color/black"/>
 
         <LinearLayout
@@ -123,8 +130,8 @@
 
                 <ImageButton
                     android:id="@+id/commute"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:padding="0sp"
@@ -149,8 +156,8 @@
 
                 <ImageButton
                     android:id="@+id/managementButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:scaleType="fitCenter"
@@ -181,21 +188,25 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
         android:orientation="vertical"
         android:layout_marginTop="30dp"
         android:layout_weight="1"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:layout_marginBottom="100dp">
+        android:padding="5dp"
+        android:background="@drawable/round_border"
+        android:layout_marginBottom="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="재고관리"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="30dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -213,8 +224,8 @@
 
                 <ImageButton
                     android:id="@+id/inventory_check"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:src="@drawable/stack"
@@ -236,8 +247,8 @@
 
                 <ImageButton
                     android:id="@+id/order"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:src="@drawable/order"
@@ -262,8 +273,8 @@
 
                 <ImageButton
                     android:id="@+id/order_detail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:scaleType="fitCenter"
@@ -281,3 +292,4 @@
     </LinearLayout>
 
 </LinearLayout>
+
