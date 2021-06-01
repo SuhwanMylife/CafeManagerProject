@@ -96,11 +96,6 @@ public class SettingActivity extends AppCompatActivity {
         //추가(5.31)
         context_setting = this; // onCreate setting 에서 this 할당 (공유)
 
-        //액션바 없애기...
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
-
-
         notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
         mCalender = new GregorianCalendar();
