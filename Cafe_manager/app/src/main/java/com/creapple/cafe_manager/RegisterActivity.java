@@ -24,13 +24,27 @@ public class RegisterActivity extends AppCompatActivity {
     private String check_message;
     private boolean validate = false;
     private AlertDialog dialog;
-
-
+    
+    //추가(6.1)
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        
+        //추가(6.1)
+        getSupportActionBar().setTitle("회원가입");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         et_id = findViewById(R.id.et_id);
         et_pw = findViewById(R.id.et_pw);
