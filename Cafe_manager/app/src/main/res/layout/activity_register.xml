@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/base"
     tools:context=".RegisterActivity">
 
     <ImageView
@@ -24,6 +25,7 @@
         android:text="@string/main_id"
         android:layout_marginTop="5dp"
         android:paddingLeft="25dp"
+        android:textColor="@color/black"
         android:textSize="20sp"/>
 
     <LinearLayout
@@ -57,6 +59,8 @@
         android:text="@string/main_pw"
         android:layout_marginTop="5dp"
         android:paddingLeft="25dp"
+        android:textColor="@color/black"
+
         android:textSize="20sp"/>
     <EditText
         android:id="@+id/et_pw"
@@ -74,6 +78,7 @@
         android:text="@string/main_pw_re"
         android:layout_marginTop="5dp"
         android:paddingLeft="25dp"
+        android:textColor="@color/black"
         android:textSize="20sp"/>
     <EditText
         android:id="@+id/et_pw_re"
@@ -91,6 +96,7 @@
         android:text="@string/main_store"
         android:layout_marginTop="5dp"
         android:paddingLeft="25dp"
+        android:textColor="@color/black"
         android:textSize="20sp"/>
     <EditText
         android:id="@+id/et_store"
@@ -107,6 +113,7 @@
         android:text="@string/main_num"
         android:layout_marginTop="5dp"
         android:paddingLeft="25dp"
+        android:textColor="@color/black"
         android:textSize="20sp"/>
     <EditText
         android:id="@+id/et_num"
