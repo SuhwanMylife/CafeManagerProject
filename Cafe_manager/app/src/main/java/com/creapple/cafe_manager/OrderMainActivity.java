@@ -44,7 +44,6 @@ public class OrderMainActivity extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.listView_main_list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mEditTextSearchKeyword = (EditText) findViewById(R.id.editText_main_searchKeyword);
 
         mArrayList = new ArrayList<>();
 
@@ -54,21 +53,21 @@ public class OrderMainActivity extends AppCompatActivity {
         GetData task = new GetData();
         task.execute( SERVER_ADDRESS + "/inventory_getjson.php", "");
 
-        Button button_search = (Button) findViewById(R.id.button_main_search);
-        button_search.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                mArrayList.clear();
-                mAdapter.notifyDataSetChanged();
-
-
-                String Keyword =  mEditTextSearchKeyword.getText().toString();
-                mEditTextSearchKeyword.setText("");
-
-                GetData task = new GetData();
-                task.execute( SERVER_ADDRESS + "/inventory_query.php", Keyword);
-            }
-        });
+//        Button button_search = (Button) findViewById(R.id.button_main_search);
+//        button_search.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//
+//                mArrayList.clear();
+//                mAdapter.notifyDataSetChanged();
+//
+//
+//                String Keyword =  mEditTextSearchKeyword.getText().toString();
+//                mEditTextSearchKeyword.setText("");
+//
+//                GetData task = new GetData();
+//                task.execute( SERVER_ADDRESS + "/inventory_query.php", Keyword);
+//            }
+//        });
 
 
         Button button_all = (Button) findViewById(R.id.button_main_all);
