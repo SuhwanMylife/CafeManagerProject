@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -29,9 +30,22 @@ public class Time_clicked extends AppCompatActivity {
     private ArrayList<Emp_work> workArrayList = new ArrayList<Emp_work>();
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_clicked);
+
+        getSupportActionBar().setTitle("주별 근무시간 확인");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
         String work_list = intent.getStringExtra("worklist");
@@ -155,18 +169,18 @@ public class Time_clicked extends AppCompatActivity {
             }
         });
 
-        Button btn_checkSalary = findViewById(R.id.btn_checkSalary);
-
-        btn_checkSalary.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Time_clicked.this,ManagementActivity.class);
-                intent.putExtra("worklist", work_list);
-                intent.putExtra("employeeList", emp_list);
-                intent.putExtra("userStore", userStore);
-                startActivity(intent);
-            }
-        });
+//        Button btn_checkSalary = findViewById(R.id.btn_checkSalary);
+//
+//        btn_checkSalary.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Time_clicked.this,ManagementActivity.class);
+//                intent.putExtra("worklist", work_list);
+//                intent.putExtra("employeeList", emp_list);
+//                intent.putExtra("userStore", userStore);
+//                startActivity(intent);
+//            }
+//        });
     }
 }
 
