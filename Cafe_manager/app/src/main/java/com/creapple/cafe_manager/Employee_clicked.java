@@ -2,6 +2,7 @@ package com.creapple.cafe_manager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,11 +11,23 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Employee_clicked extends AppCompatActivity {
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_clicked);
+
+        getSupportActionBar().setTitle("직원별 급여 확인");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView name = (TextView)findViewById(R.id.name);
         TextView position = (TextView)findViewById(R.id.position);

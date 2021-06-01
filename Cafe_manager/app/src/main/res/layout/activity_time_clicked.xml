@@ -360,13 +360,13 @@
         </TableRow>
 
     </TableLayout>
-    <Button
-        android:id="@+id/btn_checkSalary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="급여 확인하기"
-        android:layout_gravity="right"
-        android:layout_marginRight="20dp"/>
+<!--    <Button-->
+<!--        android:id="@+id/btn_checkSalary"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="급여 확인하기"-->
+<!--        android:layout_gravity="right"-->
+<!--        android:layout_marginRight="20dp"/>-->
 
 
 </LinearLayout>

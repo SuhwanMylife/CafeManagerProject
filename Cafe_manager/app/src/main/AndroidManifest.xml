@@ -36,6 +36,8 @@
         <activity android:name=".TimeAll" />
         <activity android:name=".TimeDetailActivity" />
         <activity android:name=".LoginActivity">
+        </activity>
+        <activity android:name=".FirstActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
