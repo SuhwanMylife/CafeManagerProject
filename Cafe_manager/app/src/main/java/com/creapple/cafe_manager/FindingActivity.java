@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,10 +24,26 @@ public class FindingActivity extends AppCompatActivity {
     Button btn_find_id, btn_find_pw;
     private EditText et_num_id, et_store_id, et_id_pw, et_num_pw;
 
+    //추가(6.1)
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finding);
+
+        //추가(6.1)
+        getSupportActionBar().setTitle("아이디/비밀번호 찾기");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         et_store_id = findViewById(R.id.find_store);
         et_num_id = findViewById(R.id.find_num);
