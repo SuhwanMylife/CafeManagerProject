@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/base"
     tools:context=".SettingInfoActivity">
 
     <ImageView
@@ -13,7 +14,7 @@
         android:layout_height="200dp"
         android:layout_marginTop="40dp"
         android:layout_gravity="center"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/cafe_help" />
 
     <TextView
         android:layout_width="wrap_content"
