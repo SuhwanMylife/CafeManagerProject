@@ -20,6 +20,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -71,11 +72,26 @@ public class SettingActivity extends AppCompatActivity {
 
     }
 
+    //추가(6.1)
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+
+        //추가(6.1)
+        getSupportActionBar().setTitle("설정");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //추가(5.31)
         context_setting = this; // onCreate setting 에서 this 할당 (공유)
