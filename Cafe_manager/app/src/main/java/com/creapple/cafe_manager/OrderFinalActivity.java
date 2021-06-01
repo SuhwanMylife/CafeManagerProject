@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,6 +23,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class OrderFinalActivity extends AppCompatActivity {
@@ -68,11 +71,26 @@ public class OrderFinalActivity extends AppCompatActivity {
             }
         }
 
+        Integer price_total = 0;
+        for (int i = mArrayList.size()-1; i >= 0; i--) {
+            int price = Integer.parseInt(String.valueOf(mArrayList.get(i).getMember_pdt_price()));
+            int stock_num = Integer.parseInt(String.valueOf(mArrayList.get(i).getMember_pdt_stock_num()));
+            price_total += price * stock_num;
+        }
+        DecimalFormat formatter = new DecimalFormat("###,###");
+        Integer.toString(price_total);
+        // formatter.format(price_total);
+
+
         mAdapter = new OrderUserAdapter(this, mArrayList);
         mRecyclerView.setAdapter(mAdapter);
 
-        // mArrayList.clear();
-        // mAdapter.notifyDataSetChanged();
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(), new LinearLayoutManager(this).getOrientation());
+        mRecyclerView.addItemDecoration(dividerItemDecoration);
+
+        TextView tv_price_total = (TextView) findViewById(R.id.tv_price_total);
+        tv_price_total.setText("총 금액: " + formatter.format(price_total) + "원");
+
 
         Button orderFinal = findViewById(R.id.order_final);
         orderFinal.setOnClickListener(new View.OnClickListener() {
@@ -89,9 +107,9 @@ public class OrderFinalActivity extends AppCompatActivity {
                             if (stock_num != 0) {
 
                                 String pdt_name = mArrayList.get(i).getMember_pdt_name();
-                                String pdt_classification = mArrayList.get(i).getMember_pdt_unit();
-                                String pdt_unit = mArrayList.get(i).getMember_pdt_price();
-                                String pdt_price = mArrayList.get(i).getMember_pdt_stock();
+                                String pdt_classification = mArrayList.get(i).getMember_pdt_classification();
+                                String pdt_unit = mArrayList.get(i).getMember_pdt_unit();
+                                String pdt_price = mArrayList.get(i).getMember_pdt_price();
                                 String pdt_stock_num = mArrayList.get(i).getMember_pdt_stock_num();
 
                                 OrderFinalActivity.InsertData task = new OrderFinalActivity.InsertData();
@@ -100,7 +118,7 @@ public class OrderFinalActivity extends AppCompatActivity {
                         }
 
                         Toast.makeText(OrderFinalActivity.this, "발주 신청이 성공적으로 이루어졌습니다.", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(OrderFinalActivity.this, OrderMainActivity.class);
+                        Intent intent = new Intent(OrderFinalActivity.this, MainActivity.class);
                         startActivity(intent);
                     }
                 });

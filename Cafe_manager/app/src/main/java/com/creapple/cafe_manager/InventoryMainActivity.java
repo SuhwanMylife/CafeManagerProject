@@ -55,23 +55,13 @@ public class InventoryMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inventory_main);
 
-//            mEditTextpdtname = (EditText)findViewById(R.id.editText_main_pdt_name);
-//            mEditTextpdtclassification = (EditText)findViewById(R.id.editText_main_pdt_classification);
-//            mEditTextpdtunit = (EditText)findViewById(R.id.editText_main_pdt_unit);
-//            mEditTextpdtprice = (EditText)findViewById(R.id.editText_main_pdt_price);
-//            mEditTextpdtstock = (EditText)findViewById(R.id.editText_main_pdt_stock);
-//            mTextViewResult = (TextView)findViewById(R.id.textView_main_result);
-
         mRecyclerView = (RecyclerView) findViewById(R.id.listView_main_list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        // set layout manager 1
-//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-//        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(), new LinearLayoutManager(this).getOrientation());
+        mRecyclerView.addItemDecoration(dividerItemDecoration);
 
         mEditTextSearchKeyword = (EditText) findViewById(R.id.editText_main_searchKeyword);
-
-//            mTextViewResult.setMovementMethod(new ScrollingMovementMethod());
-
 
 
         mArrayList = new ArrayList<>();
@@ -79,12 +69,16 @@ public class InventoryMainActivity extends AppCompatActivity {
         mAdapter = new UsersAdapter(this, mArrayList);
         mRecyclerView.setAdapter(mAdapter);
 
+        mArrayList.clear();
+        mAdapter.notifyDataSetChanged();
+
+        GetData task = new GetData();
+        task.execute( "http://ghtjd8264.dothome.co.kr/inventory_getjson.php", "");
+
         mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), mRecyclerView, new ClickListener() {
             @Override
             public void onClick(View view, int position) {
                 PersonalData dict = mArrayList.get(position);
-                Toast.makeText(getApplicationContext(), dict.getMember_pdt_name()+' '+dict.getMember_pdt_classification()+' '+dict.getMember_pdt_unit()
-                        +' '+dict.getMember_pdt_price()+' '+dict.getMember_pdt_stock(), Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent(getBaseContext(), UpdateActivity.class);
 

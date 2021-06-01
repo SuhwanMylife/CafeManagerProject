@@ -24,7 +24,7 @@ class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.CustomViewHolder> {
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
-        protected TextView pdt_id;
+        // protected TextView pdt_id;
         protected TextView pdt_name;
         protected TextView pdt_classificaion;
         protected TextView pdt_unit;
@@ -35,7 +35,7 @@ class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.CustomViewHolder> {
 
         public CustomViewHolder(View view) {
             super(view);
-            this.pdt_id = (TextView) view.findViewById(R.id.textView_list_pdt_id);
+            // this.pdt_id = (TextView) view.findViewById(R.id.textView_list_pdt_id);
             this.pdt_name = (TextView) view.findViewById(R.id.textView_list_pdt_name);
             this.pdt_classificaion = (TextView) view.findViewById(R.id.textView_list_pdt_classification);
             this.pdt_unit = (TextView) view.findViewById(R.id.textView_list_pdt_unit);
@@ -56,7 +56,7 @@ class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.CustomViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder viewholder, int position) {
 
-        viewholder.pdt_id.setText(mList.get(position).getMember_pdt_id());
+        // viewholder.pdt_id.setText(mList.get(position).getMember_pdt_id());
         viewholder.pdt_name.setText(mList.get(position).getMember_pdt_name());
         viewholder.pdt_classificaion.setText(mList.get(position).getMember_pdt_classification());
         viewholder.pdt_unit.setText(mList.get(position).getMember_pdt_unit());

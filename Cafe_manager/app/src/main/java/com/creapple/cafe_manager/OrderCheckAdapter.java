@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class OrderCheckAdapter extends RecyclerView.Adapter<OrderCheckAdapter.CustomViewHolder> {
@@ -50,8 +51,12 @@ public class OrderCheckAdapter extends RecyclerView.Adapter<OrderCheckAdapter.Cu
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder viewholder, int position) {
 
-        viewholder.pdt_date.setText(mList.get(position).getMember_pdt_date());
-        viewholder.pdt_price_total.setText(mList.get(position).getMember_pdt_price_total());
+        DecimalFormat formatter = new DecimalFormat("###,###");
+
+        Integer a = Integer.parseInt(mList.get(position).getMember_pdt_price_total());
+
+        viewholder.pdt_date.setText("발주일자: " + mList.get(position).getMember_pdt_date());
+        viewholder.pdt_price_total.setText("총 금액: " + formatter.format(a) + "원"); // formatter.format(mList.get(position).getMember_pdt_price_total())
     }
 
     @Override

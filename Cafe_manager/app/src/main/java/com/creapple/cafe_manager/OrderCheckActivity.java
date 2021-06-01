@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,6 +49,9 @@ public class OrderCheckActivity extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.listView_main_list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(), new LinearLayoutManager(this).getOrientation());
+        mRecyclerView.addItemDecoration(dividerItemDecoration);
 
         mArrayList = new ArrayList<>();
 
@@ -195,6 +199,54 @@ public class OrderCheckActivity extends AppCompatActivity {
             JSONArray jsonArray = jsonObject.getJSONArray(TAG_JSON);
 
             ArrayList<String> pdt_date_list = new ArrayList<>();
+            // OrderDateCheckData datecheck = new OrderDateCheckData();
+            ArrayList<OrderDateCheckData> datechecklist = new ArrayList<>();
+
+            for(int i=0;i<jsonArray.length();i++){
+                JSONObject item1 = jsonArray.getJSONObject(i);
+
+                String pdt_date = item1.getString(TAG_PDT_DATE);
+                String pdt_price = item1.getString(TAG_PDT_PRICE);
+                String pdt_stock_num = item1.getString(TAG_PDT_STOCK_NUM);
+                Integer pdt_price_total = null;
+
+                SimpleDateFormat fm1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                Date to = fm1.parse(pdt_date);
+
+                SimpleDateFormat fm2 = new SimpleDateFormat("yyyy.MM.dd");
+                pdt_date = fm2.format(to);
+
+                Integer pdt_price_total_string = Integer.parseInt(pdt_price) * Integer.parseInt(pdt_stock_num);
+                pdt_price_total = pdt_price_total_string;
+
+                OrderDateCheckData datecheckdata = new OrderDateCheckData();
+
+                datecheckdata.setMember_pdt_date(pdt_date);
+                datecheckdata.setMember_pdt_price_total(Integer.toString(pdt_price_total));
+
+                if(datechecklist.size() == 0) {
+                    // 새로운 객체 추가
+                    datechecklist.add(datecheckdata);
+                    continue;
+                }
+
+                for(int j=0;j<datechecklist.size();j++){
+
+                    if(pdt_date.equals(datechecklist.get(j).getMember_pdt_date())) { // date값이 같으면 (이 문장이 맞나?)
+                        // j번째 객체의 pdt_price_total값 더하기
+                        Integer temp = Integer.valueOf(datechecklist.get(j).getMember_pdt_price_total()) + pdt_price_total;
+                        datechecklist.get(j).setMember_pdt_price_total(Integer.toString(temp));
+                        break;
+                    } else {
+                        if(datechecklist.size() == j+1){
+                            // 새로운 객체 추가
+                            datechecklist.add(datecheckdata);
+                            break;
+                        }
+                        continue;
+                    }
+                }
+            }
 
             for(int i=0;i<jsonArray.length();i++){
 
@@ -222,10 +274,14 @@ public class OrderCheckActivity extends AppCompatActivity {
                     OrderCheckData ordercheckdata = new OrderCheckData();
 
                     ordercheckdata.setMember_pdt_date(pdt_date);
-                    ordercheckdata.setMember_pdt_price_total(pdt_price_total);
-
-                    mArrayList.add(ordercheckdata);
-                    mAdapter.notifyDataSetChanged();
+                    // ordercheckdata.setMember_pdt_price_total(pdt_price_total);
+                    for(int j=0;j<datechecklist.size();j++){
+                        if(pdt_date.equals(datechecklist.get(j).getMember_pdt_date())){
+                            ordercheckdata.setMember_pdt_price_total(datechecklist.get(j).getMember_pdt_price_total());
+                            mArrayList.add(ordercheckdata);
+                            mAdapter.notifyDataSetChanged();
+                        }
+                    }
                 }
             }
 

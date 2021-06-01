@@ -2,8 +2,10 @@ package com.creapple.cafe_manager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,6 +34,9 @@ public class OrderCheckDetailActivity extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.listView_main_list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(), new LinearLayoutManager(this).getOrientation());
+        mRecyclerView.addItemDecoration(dividerItemDecoration);
+
         mArrayList = new ArrayList<>();
 
         mAdapter = new OrderCheckDetailsAdapter(this, mArrayList);
@@ -40,6 +45,9 @@ public class OrderCheckDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String pdt_date_primary = intent.getStringExtra("pdt_date");
+
+        TextView tv_pdt_date = (TextView) findViewById(R.id.pdt_date);
+        tv_pdt_date.setText(pdt_date_primary + " 발주 내역입니다");
 
         try {
             String TAG_JSON="choi";
@@ -53,8 +61,6 @@ public class OrderCheckDetailActivity extends AppCompatActivity {
 
             JSONObject jsonObject = new JSONObject(intent.getStringExtra("order_check_detail"));
             JSONArray jsonArray = jsonObject.getJSONArray(TAG_JSON);
-
-
 
             for (int i = 0; i < jsonArray.length(); i++) {
 
