@@ -62,9 +62,17 @@ public class ChangeInfoActivity extends AppCompatActivity {
         tv_pw = findViewById(R.id.tv_pw);
         tv_num = findViewById(R.id.tv_num);
         tv_store = findViewById(R.id.tv_store);
+        
+        //추가(6.4)
+        int pass_length = userPassword.length();
+        String star_pass = "";
+        for (int i = 1; i < pass_length ; i++ ) {
+            star_pass += "*" ;
+        }
+        String pass = userPassword.charAt(0) + star_pass;
 
         tv_id.setText(userID);
-        tv_pw.setText(userPassword);
+        tv_pw.setText(pass);
         tv_num.setText(userNumber);
         tv_store.setText(userStore);
 
