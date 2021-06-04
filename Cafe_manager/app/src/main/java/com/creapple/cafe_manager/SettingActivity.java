@@ -330,7 +330,7 @@ public class SettingActivity extends AppCompatActivity {
         SimpleDateFormat sdfML = new SimpleDateFormat("yyyy-MM");
         String getML = sdfML.format(date);
 
-        String from = getML+"-"+String.valueOf(value)+" 00:00:00"; //임의로 날짜와 시간을 지정
+        String from = getML+"-"+String.valueOf(value)+" 09:00:00"; //임의로 날짜와 시간을 지정
 
         //날짜 포맷을 바꿔주는 소스코드
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
