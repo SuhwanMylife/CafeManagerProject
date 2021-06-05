@@ -43,8 +43,9 @@ public class AlarmRecevier extends BroadcastReceiver {
         Intent intent2 = new Intent(context, LoginActivity.class); //첫화면으로 설정(변경)
         PendingIntent pendingIntent = PendingIntent.getActivity(context,101,intent2, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        //알림창 제목
-        builder.setContentTitle("알람");
+        //알림창 제목과 내용
+        builder.setContentTitle("월급날");
+        builder.setContentText("오늘은 월급날 입니다!");
         //알림창 아이콘
         builder.setSmallIcon(R.drawable.money);
         //알림창 터치시 자동 삭제

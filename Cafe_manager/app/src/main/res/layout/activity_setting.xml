@@ -61,7 +61,10 @@
                 <Button
                     android:id="@+id/btn_salary"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                        
+                    android:layout_height="40dp"
+                    android:background="@color/colorGray"
+                        
                     android:text="@string/set"
                     android:layout_gravity="right"
                     android:enabled="false"/>
@@ -100,7 +103,10 @@
                 <Button
                     android:id="@+id/btn_lack"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                        
+                    android:layout_height="40dp"
+                    android:background="@color/colorGray"
+                        
                     android:layout_gravity="right"
                     android:text="@string/set"
                     android:enabled="false"/>
