@@ -21,7 +21,7 @@
 
             <TextView
                 android:layout_marginRight="10dp"
-                android:text="검색할 분류를 입력 후 검색 버튼을 터치하세요."
+                android:text="검색할 분류 입력 후 검색 버튼 터치하세요."
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView_main_search" />
@@ -101,7 +101,7 @@
             android:text="제품명"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:layout_width="60dp"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_margin="5dp"
@@ -111,9 +111,9 @@
         <TextView
             android:id="@+id/textView_list_pdt_classification"
             android:text="분류"
-            android:textSize="18dp"
+            android:textSize="16dp"
             android:textStyle="bold"
-            android:layout_width="60dp"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_margin="5dp"
@@ -122,9 +122,9 @@
         <TextView
             android:id="@+id/textView_list_pdt_unit"
             android:text="단위"
-            android:textSize="18dp"
+            android:textSize="16dp"
             android:textStyle="bold"
-            android:layout_width="60dp"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_margin="5dp"
@@ -133,9 +133,9 @@
         <TextView
             android:id="@+id/textView_list_pdt_price"
             android:text="단가"
-            android:textSize="18dp"
+            android:textSize="16dp"
             android:textStyle="bold"
-            android:layout_width="60dp"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_margin="5dp"
@@ -146,7 +146,7 @@
             android:text="재고량"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:layout_width="60dp"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_margin="5dp"

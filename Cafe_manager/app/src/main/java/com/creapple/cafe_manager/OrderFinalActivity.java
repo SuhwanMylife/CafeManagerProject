@@ -112,13 +112,16 @@ public class OrderFinalActivity extends AppCompatActivity {
                                 String pdt_price = mArrayList.get(i).getMember_pdt_price();
                                 String pdt_stock_num = mArrayList.get(i).getMember_pdt_stock_num();
 
-                                OrderFinalActivity.InsertData task = new OrderFinalActivity.InsertData();
-                                task.execute( SERVER_ADDRESS + "/order_insert.php", pdt_name, pdt_classification, pdt_unit, pdt_price, pdt_stock_num);
+                                InsertData task1 = new InsertData();
+                                task1.execute( SERVER_ADDRESS + "/order_insert.php", pdt_name, pdt_classification, pdt_unit, pdt_price, pdt_stock_num);
+
+                                UpdateData task2 = new UpdateData();
+                                task2.execute( SERVER_ADDRESS + "/order_update_stock.php", pdt_name, pdt_stock_num);
                             }
                         }
 
                         Toast.makeText(OrderFinalActivity.this, "발주 신청이 성공적으로 이루어졌습니다.", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(OrderFinalActivity.this, MainActivity.class);
+                        Intent intent = new Intent(OrderFinalActivity.this, OrderMainActivity.class);
                         startActivity(intent);
                     }
                 });
@@ -160,6 +163,93 @@ public class OrderFinalActivity extends AppCompatActivity {
 
             String serverURL = (String)params[0];
             String postParameters = "pdt_name=" + pdt_name + "&pdt_classification=" + pdt_classification + "&pdt_unit=" + pdt_unit + "&pdt_price=" + pdt_price + "&pdt_stock_num=" + pdt_stock_num;
+
+            try {
+
+                URL url = new URL(serverURL);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+
+
+                httpURLConnection.setReadTimeout(5000);
+                httpURLConnection.setConnectTimeout(5000);
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.connect();
+
+
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                outputStream.write(postParameters.getBytes("UTF-8"));
+                outputStream.flush();
+                outputStream.close();
+
+
+                int responseStatusCode = httpURLConnection.getResponseCode();
+                Log.d(TAG, "POST response code - " + responseStatusCode);
+
+                InputStream inputStream;
+                if(responseStatusCode == HttpURLConnection.HTTP_OK) {
+                    inputStream = httpURLConnection.getInputStream();
+                }
+                else{
+                    inputStream = httpURLConnection.getErrorStream();
+                }
+
+
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+                StringBuilder sb = new StringBuilder();
+                String line = null;
+
+                while((line = bufferedReader.readLine()) != null){
+                    sb.append(line);
+                }
+
+
+                bufferedReader.close();
+
+
+                return sb.toString();
+
+
+            } catch (Exception e) {
+
+                Log.d(TAG, "InsertData: Error ", e);
+
+                return new String("Error: " + e.getMessage());
+            }
+
+        }
+    }
+
+    class UpdateData extends AsyncTask<String, Void, String> {
+        ProgressDialog progressDialog;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            progressDialog = ProgressDialog.show(OrderFinalActivity.this, "Please Wait", null, true, true);
+        }
+
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            progressDialog.dismiss();
+            // mTextViewResult.setText(result);
+            Log.d(TAG, "POST response  - " + result);
+        }
+
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            String pdt_name = (String)params[1];
+            String pdt_stock_num = (String)params[2];
+
+            String serverURL = (String)params[0];
+            String postParameters = "pdt_name=" + pdt_name + "&pdt_stock_num=" + pdt_stock_num;
 
             try {
 

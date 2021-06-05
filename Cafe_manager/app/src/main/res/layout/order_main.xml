@@ -85,9 +85,9 @@
 
         <TextView
             android:text="제품명"
-            android:textSize="16dp"
+            android:textSize="14dp"
             android:textStyle="bold"
-            android:layout_width="55dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:padding="5dp"
@@ -95,9 +95,9 @@
 
         <TextView
             android:text="분류"
-            android:textSize="16dp"
+            android:textSize="14dp"
             android:textStyle="bold"
-            android:layout_width="55dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:padding="5dp"
@@ -105,9 +105,9 @@
 
         <TextView
             android:text="단위"
-            android:textSize="16dp"
+            android:textSize="14dp"
             android:textStyle="bold"
-            android:layout_width="55dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:padding="5dp"
@@ -115,9 +115,9 @@
 
         <TextView
             android:text="단가"
-            android:textSize="16dp"
+            android:textSize="14dp"
             android:textStyle="bold"
-            android:layout_width="55dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:padding="5dp"
@@ -125,9 +125,9 @@
 
         <TextView
             android:text="재고량"
-            android:textSize="16dp"
+            android:textSize="14dp"
             android:textStyle="bold"
-            android:layout_width="55dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:padding="5dp"
@@ -135,9 +135,9 @@
 
         <TextView
             android:text="발주량"
-            android:textSize="16dp"
+            android:textSize="14dp"
             android:textStyle="bold"
-            android:layout_width="55dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:padding="5dp"
