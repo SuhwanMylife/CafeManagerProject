@@ -116,7 +116,8 @@ public class ChangeInfoActivity extends AppCompatActivity {
                                             @Override
                                             public void onClick(DialogInterface dialog, int which) {
                                                 finish();
-                                                Main.finish();
+                                                Intent intent = new Intent(ChangeInfoActivity.this, LoginActivity.class);
+                                                startActivity(intent);
                                             }
                                         })
                                         .show();
@@ -171,7 +172,8 @@ public class ChangeInfoActivity extends AppCompatActivity {
                                             @Override
                                             public void onClick(DialogInterface dialog, int which) {
                                                 finish();
-                                                Main.finish();
+                                                Intent intent = new Intent(ChangeInfoActivity.this, LoginActivity.class);
+                                                startActivity(intent);
                                             }
                                         })
                                         .show();
@@ -199,7 +201,8 @@ public class ChangeInfoActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 finish();
-                                Main.finish();
+                                Intent intent = new Intent(ChangeInfoActivity.this, LoginActivity.class);
+                                startActivity(intent);
                                 Toast.makeText(getApplicationContext(), "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
                             }
                         })
