@@ -52,7 +52,7 @@ public class Employee_clicked extends AppCompatActivity {
         double normal, over, night ;
         normal = Math.round(intent.getDoubleExtra("work_normal",0)*100)/100.0;
         over = Math.round(intent.getDoubleExtra("work_over",0)*100)/100.0;
-        night = Math.round(intent.getDoubleExtra("work_over",0)*100)/100.0;
+        night = Math.round(intent.getDoubleExtra("work_night",0)*100)/100.0;
 
         total_salary.setText("총 급여 : " + myFormatter.format(intent.getDoubleExtra("total_salary",0)) +  "원");
 

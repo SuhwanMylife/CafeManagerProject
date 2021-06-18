@@ -98,7 +98,7 @@ public class TimeAll extends AppCompatActivity {
 
             int count = 0;
             String employee_name, work_type, work_start, work_end, store_name = null;
-
+            int flag = 0;
             while (count < jsonArray.length()) {
                 JSONObject object = jsonArray.getJSONObject(count);
                 store_name = object.getString("store_name");
@@ -110,9 +110,17 @@ public class TimeAll extends AppCompatActivity {
                     Emp_work tmpWork = new Emp_work(employee_name, work_type, fm.parse(work_start), fm.parse(work_end));
 
                     workArrayList.add(tmpWork);
+                    flag = 1;
                 }
-
                 count++;
+            }
+            if(flag == 0){
+                employee_name = "";
+                work_type = "";
+                work_start = "1998-12-18 00:00:00";
+                work_end = "1998-12-18 00:00:00";
+                Emp_work tmpWork = new Emp_work(employee_name, work_type, fm.parse(work_start), fm.parse(work_end));
+                workArrayList.add(tmpWork);
             }
         } catch (JSONException | ParseException e) {
             e.printStackTrace();
@@ -170,7 +178,7 @@ public class TimeAll extends AppCompatActivity {
                     work.setText(" ");
                 }
                 work = findViewById(R.id.work0);
-                work.setText("근무한 직원이 없습니다.");
+                work.setText("직원이 없습니다.");
 
                 int n = 0;
                 int count = 0;
